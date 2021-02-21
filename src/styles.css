@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 300;
+    width: 100%;
+	background-image: repeating-linear-gradient(90deg, #fff, #fff 20px, #fbfbfb 20px, #fbfbfb 40px);
+}
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:100px  repeat(3,auto);
+    grid-gap: 12px;
+    grid-template-areas:
+                    "header header header"
+                    "content content content"
+                    "footer footer footer";
+    height: 100%;
+    grid-gap:10px;
+    /* background-color: purple; */
+  }
+  app-header {
+    color: white;
+    font-size: 14px;
+    grid-area: header;
+    text-align: center;
+    background-color: #FA7D44;
+  }
+
+
+/* El contenido que varia por ruta */
+router-outlet + * {
+    grid-area: content;
+    background-color: rgb(235, 75, 213);
+}
+
+app-footer {
+    grid-area: footer;
+    background-color: rgb(63, 80, 117);
+} 
+
+
+/* RESPONSIVE DESING */
+/* @media screen and (max-width:768px ){
+	.contenedor{
+		grid-template-areas: "header     header    header"
+							"contenido contenido  contenido"
+							"sidebar   sidebar    sidebar" 
+							"widget-1  widget-2   widget-2"
+							"footer    footer     footer "	;
+	}
+	
+} */
