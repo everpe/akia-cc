@@ -9,36 +9,60 @@ nav {
 	height: 100px;
 	background-color: #F7F8E2;
 	color: black;
+	font-size: 0.9em;
 }
 nav .logo {
 	float: left;
-	width: 40%;
+	width: 20%;
 	height: 100%;
 	display: flex;
 	align-items: center;
 	font-size: 24px;
 	color: #84BD00;
+	justify-content: space-around;
+	align-items: center;
+}
+.txt-header{
+	font-size: 0.9em;
+	margin-bottom: 1%;
 }
 nav .links {
 	float: right;
 	padding: 0;
 	margin: 0;
-	width: 60%;
+	width: 80%;
 	height: 100%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 }
+ .mobile, .mobile1{
+	display: none;
+}
 nav .links li {
 	list-style: none;
+}
+nav .links li:hover{
+
+	border-bottom:solid #84BD00;
+}
+.links .redes{
+	color: #84BD00;
+}
+.boton-mobile{
+	color: white;
+	background-color: #84BD00;
 }
 nav .links a {
 	display: block;
 	padding: 1em;
-	font-size: 16px;
+	font-size: 1em;
 	font-weight: bold;
-	color: rgb(20, 18, 18);
+	color: rgb(0, 0, 0);
 	text-decoration: none;
+}
+nav .links a:hover{
+	color: #84BD00;
 }
 #nav-toggle {
 	position: absolute;
@@ -54,7 +78,7 @@ nav .icon-burger {
 nav .icon-burger .line {
 	width: 30px;
 	height: 5px;
-	background-color: #fff;
+	background-color: #4D574C;
 	margin: 5px;
 	border-radius: 3px;
 	transition: all .3s ease-in-out;
@@ -81,6 +105,26 @@ nav .icon-burger .line {
 		overflow: hidden;
 		box-sizing: border-box;
 		transition: all .5s ease-in-out;
+	}
+	.redes{
+		display: none;
+	}
+	.mobile{
+		width: 100%;
+		display: inline;
+		/* background-color: red; */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.hr{
+		margin: auto;
+		width: 90%;
+		color: #84BD00;
+		background-color:#84BD00 ;
+	}
+	nav .links .mobile{
+		display: inline;
 	}
 	nav .links a {
 		font-size: 20px;
