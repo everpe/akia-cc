@@ -8,6 +8,7 @@ body {
 	font-weight: 300;
     width: 100%;
     font-size: 16px;
+    background-color: #F7F8E2;
 	/* background-image: repeating-linear-gradient(90deg, #fff, #fff 20px, #fbfbfb 20px, #fbfbfb 40px); */
 }
 .contenedor {
@@ -37,7 +38,7 @@ body {
 /* El contenido que varia por ruta */
 router-outlet + * {
     grid-area: content;
-    background-color: rgb(235, 75, 213);
+    /* background-color: rgb(235, 75, 213); */
 }
 
 app-footer {

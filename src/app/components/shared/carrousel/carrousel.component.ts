@@ -10,7 +10,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 export class CarrouselComponent implements OnInit {
 
   
-  images = [700, 800, 807].map((n) => `https://picsum.photos/id/${n}/900/400`);
+  images = [700, 803, 807].map((n) => `https://picsum.photos/id/${n}/900/350`);
 
   constructor(config: NgbCarouselConfig) {
     // 

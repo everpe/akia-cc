@@ -4,16 +4,177 @@
     display: grid;
     grid-gap:10px;
     grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(4,auto);
+    grid-template-rows: repeat(auto-fill,auto) 200px ;
     grid-template-areas: 'carrousel carrousel carrousel carrousel carrousel'
                          'carrousel carrousel carrousel carrousel carrousel'
-                         ' otro        otro      otro     otro      otro'
-                         ' otro        otro      otro     otro      otro';
+                         ' logo        logo      logo     logo      logo'
+                         ' familia    familia    familia   dere     dere'
+                         ' familia    familia    familia   dere     dere'
+                         'text         text      text     text     text'
+                         'tiendas      tiendas  tiendas  tiendas  tiendas'
+                         'text2        text2       text2     text2     text2'
+                         'noticias  noticias    noticias    noticias    noticias';
 
 }
 app-carrousel{
     grid-area:carrousel ;
-    border: solid red;
+    /* border: solid red; */
     background-color: rgb(76, 0, 255);
-    /* height: 100px; */
+}
+
+
+
+.section-initial{
+   color: #84BD00;
+   grid-area:logo ;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   position: relative;
+
+}
+.boton-ventas{
+    background-color: #84BD00;
+    color: white;
+}
+.linea{
+    position: absolute;
+    color: #84BD00;
+    background-color: #84BD00;
+    top: 30%;
+}
+.color-2{
+    color: #4D574C;
+}
+
+.familia{
+    grid-area: familia;
+    /* background-color: #ffc0cb; */
+    text-align: left;
+    justify-content: left;
+    position: relative;
+    padding-left: 6%;
+    
+}
+.familia p{
+    text-align: left;
+}
+.dere{
+    grid-area: dere;
+    padding:1% ;
+}
+.borde{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: solid 1px #84BD00;
+    padding: 4%;
+}
+.borde p{
+    text-align: left;
+}
+.conocenos{
+    color: white;
+    padding-right: 40%;
+    background-color: #84BD00;
+    /* background-color: yellow; */
+    min-height:210px ;
+    padding-top:12%;
+    padding-left: 3%;
+
+    /* background-color: red; */
+}
+.img-familia{
+    position: absolute;
+    right: 0px;
+    top: 20%;
+}
+.span{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.text-conoce-tiendas{
+    grid-area: text;
+    padding-left: 3%;
+    padding-top: 2%;
+}
+.galeria-tiendas{
+    padding:0 3% 3% 3%;
+    grid-area: tiendas;
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: repeat(auto-fill,minmax(140px,auto));
+}
+
+.one{
+    /* background-color: bisque; */
+}
+.dos{
+    /* background-color: aquamarine; */
+}
+.galeria-tiendas img{
+    width: 100%;
+    height: 100%;
+}
+.text-2{
+    padding-left: 3%;
+    grid-area: text2;
+    display: inline;
+}
+
+.noticias{
+    padding: 3%;
+    grid-area: noticias;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fill,minmax(300px,auto));
+   
+}
+.noticias img{
+    width: 100%;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .home{
+        grid-template-areas: 'carrousel carrousel carrousel carrousel carrousel'
+                         'carrousel carrousel carrousel carrousel carrousel'
+                         ' logo        logo      logo     logo      logo'
+                         ' familia    familia    familia   familia  familia'
+                         ' dere    dere    dere   dere     dere'
+                         'text         text      text     text     text'
+                         'tiendas      tiendas  tiendas  tiendas  tiendas'
+                         'text2        text2       text2     text2     text2'
+                         'noticias  noticias    noticias    noticias    noticias';
+    }
+    .borde{
+        text-align: center;
+        display: block;
+        border: solid transparent;
+        padding-top: 8%;
+
+    }
+    .borde .boton-ventas{
+        display: block;
+        margin: auto;     
+    }
+    .borde p{
+        text-align: center;
+        border:solid 1px #84BD00;
+    }
+    .conocenos{
+        padding: 0;
+        padding-left: 4px;
+    }
+    .conocenos p{
+        text-align: left;
+        width: 40%;
+    }
+
 }
