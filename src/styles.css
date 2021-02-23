@@ -3,11 +3,17 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root {
+    --color-verde: #84BD00;
+    --negrita:600;
+    /* --font-text: */
+  }
+  
 body {
-	font-family: 'Roboto Condensed', sans-serif;
+	font-family: 'Montserrat',sans-serif;
 	font-weight: 300;
     width: 100%;
-    font-size: 16px;
+    font-size: 18px;
     background-color: #F7F8E2;
 	/* background-image: repeating-linear-gradient(90deg, #fff, #fff 20px, #fbfbfb 20px, #fbfbfb 40px); */
 }

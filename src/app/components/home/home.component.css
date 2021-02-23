@@ -2,19 +2,27 @@
     width: 100%;
     /* height: 800px; */
     display: grid;
-    grid-gap:10px;
+    grid-gap:6px;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(auto-fill,auto) 200px ;
     grid-template-areas: 'carrousel carrousel carrousel carrousel carrousel'
                          'carrousel carrousel carrousel carrousel carrousel'
-                         ' logo        logo      logo     logo      logo'
-                         ' familia    familia    familia   dere     dere'
-                         ' familia    familia    familia   dere     dere'
-                         'text         text      text     text     text'
-                         'tiendas      tiendas  tiendas  tiendas  tiendas'
-                         'text2        text2       text2     text2     text2'
+                         'logo        logo      logo     logo      logo'
+                         'familia    familia    familia   dere     dere'
+                         'familia    familia    familia   dere     dere'
+                         'text        text      text     text     text'
+                         'tiendas     tiendas   tiendas  tiendas  tiendas'
+                         'text2       text2      text2     text2     text2'
                          'noticias  noticias    noticias    noticias    noticias';
 
+}
+
+.home h3{
+    font-weight: var(--negrita);
+}
+.home h4{
+    font-weight: 600;
+    /* color: red; */
 }
 app-carrousel{
     grid-area:carrousel ;
@@ -43,13 +51,21 @@ app-carrousel{
     background-color: #84BD00;
     top: 30%;
 }
-.color-2{
-    color: #4D574C;
+.span-conocenos{
+    color: white;
+    /* color: #4D574C; */
+    display: flex;
+    justify-content: space-between;
 }
+.span-conocenos h4,
+.span-conocenos a{
+    color: white;
+    font-weight: 500;
+}
+
 
 .familia{
     grid-area: familia;
-    /* background-color: #ffc0cb; */
     text-align: left;
     justify-content: left;
     position: relative;
@@ -90,10 +106,7 @@ app-carrousel{
     right: 0px;
     top: 20%;
 }
-.span{
-    display: flex;
-    justify-content: space-between;
-}
+
 
 
 
@@ -131,13 +144,21 @@ app-carrousel{
     grid-area: noticias;
     display: grid;
     grid-gap: 40px;
-    grid-template-columns: repeat(auto-fill,minmax(300px,auto));
+    /* grid-template-columns: repeat(auto-fill,minmax(300px,auto)); */
+    grid-template-columns: repeat(3,minmax(200px,1fr));
    
 }
 .noticias img{
     width: 100%;
 }
-
+.noticias a{
+    text-decoration:none;
+    color:var(--color-verde);
+}
+.noticias .inferior-card{
+    display: flex;
+    justify-content: space-between;
+}
 
 
 /* RESPONSIVE DESIGN */
@@ -174,7 +195,19 @@ app-carrousel{
     }
     .conocenos p{
         text-align: left;
-        width: 40%;
+        width: 90%;
+    }
+    .conocenos{
+        padding-right: 50%;
     }
 
+    .noticias{
+        grid-template-columns: repeat(auto-fill,minmax(300px,auto));
+    }
+    /*INVERTIR SENTIDO CARD 
+    .noticias .card{
+        border: solid red;
+        display: -webkit-box;
+    } */
+  
 }

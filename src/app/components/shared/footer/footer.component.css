@@ -1,5 +1,5 @@
 .footer {
-	background:  #84BD00;
+	background:  var(--color-verde);
 	color: white;
 	font-size: 20px; 
 	grid-area: footer;
@@ -50,7 +50,7 @@
 }
 .footer .redes{
 	grid-area: logo;
-	padding-right: 50%;
+	padding-right: 30%;
 }
 .redes .facebook,
 .redes .instagram{
