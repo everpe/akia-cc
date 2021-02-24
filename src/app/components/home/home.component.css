@@ -7,13 +7,13 @@
     grid-template-rows: repeat(auto-fill,auto) 200px ;
     grid-template-areas: 'carrousel carrousel carrousel carrousel carrousel'
                          'carrousel carrousel carrousel carrousel carrousel'
-                         'logo        logo      logo     logo      logo'
-                         'familia    familia    familia   dere     dere'
-                         'familia    familia    familia   dere     dere'
-                         'text        text      text     text     text'
-                         'tiendas     tiendas   tiendas  tiendas  tiendas'
-                         'text2       text2      text2     text2     text2'
-                         'noticias  noticias    noticias    noticias    noticias';
+                         'logo        logo      logo     logo       logo'
+                         'familia    familia    familia   dere      dere'
+                         'familia    familia    familia   dere      dere'
+                         'text        text      text     text       text'
+                         'tiendas     tiendas   tiendas  tiendas    tiendas'
+                         'text2      text2       text2    text2     text2-a'
+                         'noticias  noticias    noticias  noticias   noticias';
 
 }
 
@@ -69,7 +69,7 @@ app-carrousel{
     text-align: left;
     justify-content: left;
     position: relative;
-    padding-left: 6%;
+    padding-left: 2em;
     
 }
 .familia p{
@@ -98,8 +98,6 @@ app-carrousel{
     min-height:210px ;
     padding-top:12%;
     padding-left: 3%;
-
-    /* background-color: red; */
 }
 .img-familia{
     position: absolute;
@@ -108,12 +106,10 @@ app-carrousel{
 }
 
 
-
-
 .text-conoce-tiendas{
     grid-area: text;
-    padding-left: 3%;
-    padding-top: 2%;
+    padding-left:2em;
+    padding-top: 1em;
 }
 .galeria-tiendas{
     padding:0 3% 3% 3%;
@@ -123,22 +119,73 @@ app-carrousel{
     grid-template-columns: repeat(auto-fill,minmax(140px,auto));
 }
 
-.one{
-    /* background-color: bisque; */
-}
-.dos{
-    /* background-color: aquamarine; */
-}
 .galeria-tiendas img{
     width: 100%;
     height: 100%;
 }
-.text-2{
-    padding-left: 3%;
-    grid-area: text2;
-    display: inline;
-}
 
+/* HOVER TIENDAS */
+.div-imagen {
+    position: relative;
+    width: 100%;
+    /* border: solid blue; */
+  }
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .div-imagen:hover .image {
+    opacity: 0.1;
+    background-color: rgba(0,0,0,0.9 );
+  }
+  .div-imagen:hover .middle {
+    opacity: 1;
+  }
+  .middle .link-gallery a{
+      font-weight: var(--negrita);
+      text-decoration: none;
+      color: var(--color-verde);
+  }
+/* END HOVER */
+
+.text2{
+    padding-left: 2em;
+    padding-right: 1em;
+    grid-area: text2;
+}
+.text2-hr{
+    grid-area: text2;
+    margin-left: 15%;
+    width: 100%;
+}
+.text2-a {
+    grid-area: text2-a;
+    margin-left: 60%;
+    
+    /* display: flex; */
+}
+.text2-a a{
+    text-decoration: none;
+    color: var(--color-verde);
+}
+.linea2{
+    width: 100%;
+    height: auto;
+}
 .noticias{
     padding: 3%;
     grid-area: noticias;
@@ -171,7 +218,7 @@ app-carrousel{
                          ' dere    dere    dere   dere     dere'
                          'text         text      text     text     text'
                          'tiendas      tiendas  tiendas  tiendas  tiendas'
-                         'text2        text2       text2     text2     text2'
+                         'text2        text2       text2     text2-a     text2-a'
                          'noticias  noticias    noticias    noticias    noticias';
     }
     .borde{
@@ -189,20 +236,47 @@ app-carrousel{
         text-align: center;
         border:solid 1px #84BD00;
     }
+    .familia{
+        padding-left: 1em;
+    }
     .conocenos{
         padding: 0;
         padding-left: 4px;
     }
     .conocenos p{
         text-align: left;
-        width: 90%;
+        width: 80%;
     }
     .conocenos{
         padding-right: 50%;
     }
 
+    .text2{
+        grid-area: text2;
+    }               
+    .text2-hr{
+        width: 0px;
+        display: none;
+    }
+    .text2-a{
+        margin-left: 0px;
+        grid-area: text2-a;
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        align-items: center;
+        padding-right: 20%;
+        width: 100%;
+    } 
+    .text2-a a{
+        display: block;
+        text-align: left;
+        justify-content: left;
+        margin: 0 i !important;
+        
+    }
     .noticias{
-        grid-template-columns: repeat(auto-fill,minmax(300px,auto));
+        grid-template-columns: repeat(auto-fill,minmax(200px,auto));
     }
     /*INVERTIR SENTIDO CARD 
     .noticias .card{

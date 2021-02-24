@@ -9,6 +9,12 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarrouselComponent } from './components/shared/carrousel/carrousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TiendasComponent } from './components/tiendas/tiendas.component';
+import { TerrazaComponent } from './components/terraza/terraza.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { FamiliaAkiaComponent } from './components/familia-akia/familia-akia.component';
+import { ConocenosComponent } from './components/conocenos/conocenos.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    CarrouselComponent
+    CarrouselComponent,
+    TiendasComponent,
+    TerrazaComponent,
+    NoticiasComponent,
+    ContactoComponent,
+    FamiliaAkiaComponent,
+    ConocenosComponent
   ],
   imports: [
     BrowserModule,
