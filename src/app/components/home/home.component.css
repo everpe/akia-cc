@@ -1,6 +1,6 @@
 .home{
     width: 100%;
-    /* height: 800px; */
+    height: 100%;
     display: grid;
     grid-gap:6px;
     grid-template-columns: repeat(5,1fr);
@@ -120,8 +120,9 @@ app-carrousel{
 }
 
 .galeria-tiendas img{
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
+    max-width: 100%;
 }
 
 /* HOVER TIENDAS */
@@ -241,14 +242,25 @@ app-carrousel{
     }
     .conocenos{
         padding: 0;
-        padding-left: 4px;
+        padding-left:5px;
+        /* Padding del tamaño de la img familia*/
+        /* padding-right: 180px; */
     }
     .conocenos p{
         text-align: left;
-        width: 80%;
+        max-width: 40%;
+        padding-top: 3%;
     }
-    .conocenos{
-        padding-right: 50%;
+    .conocenos h4{
+        font-size: 1em;
+    }
+    .span-conocenos{
+        display:block;
+        /* background-color: red; */
+        
+    }
+    .span-conocenos a{
+        margin-left: 30%;
     }
 
     .text2{

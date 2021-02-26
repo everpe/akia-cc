@@ -14,15 +14,15 @@
 body {
 	font-family: 'Montserrat',sans-serif;
 	font-weight: 300;
-    width: 100%;
-    font-size: 18px;
-    background-color: #F7F8E2;
+  width: 100%;
+  font-size: 16px;
+  background-color: #F7F8E2;
 	/* background-image: repeating-linear-gradient(90deg, #fff, #fff 20px, #fbfbfb 20px, #fbfbfb 40px); */
 }
 .contenedor {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows:100px  repeat(6,auto);
+    grid-template-rows:80px  repeat(6,auto);
     grid-template-areas:
                     "header header header"
                     "content content content"
@@ -66,3 +66,5 @@ app-footer {
 	}
 	
 } */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

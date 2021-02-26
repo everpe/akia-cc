@@ -1,0 +1,51 @@
+.tiendas-container{
+    padding-left: 2em;
+    padding-right: 2em;
+    display: grid;
+    background-color: brown;
+    /* grid-gap:9px; */
+    padding: 5px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(auto-fill,auto);
+    grid-template-areas: "categorias  buscador   buscador   buscador"
+                         "categorias  galeria    galeria    galeria"
+                         "categorias  galeria    galeria    galeria"
+                         "categorias   paginador  paginador  paginador";
+}
+
+.categorias-side{
+    grid-area: categorias;
+    background-color: yellow;
+    justify-content: center;
+    text-align: center;
+}
+.categorias-side a{
+    display: block;
+}
+.buscador{
+    grid-area: buscador;
+    background-color: blue;
+}
+
+.galeria-tiendas{
+    grid-area: galeria;
+    display: grid;
+    grid-gap: 12px;
+    /* grid-template-columns: repeat(auto-fill,minmax(150,auto)); */
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(auto-fill,auto);
+}
+.galeria-tiendas img{
+    max-width: 100%;
+}
+
+.paginador{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    grid-area: paginador;
+}
+.page-item next-item {
+    background-color: red !important;
+    border: solid red !important;
+}

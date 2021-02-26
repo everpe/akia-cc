@@ -1,1 +1,64 @@
-<p>tiendas works!</p>
+<div class="tiendas-container">
+    
+    <div class="desktop categorias-side">
+        <h4>Categorias</h4>
+        <a href="">Belleza</a>
+        <a href="">Salud</a>
+        <a href="">Estudio</a>
+        <a href="">Otrp</a>
+        <a href="">Otra</a>
+    </div>
+
+    <div class="buscador">
+        <h3>Tiendas de Akia</h3>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">@example.com</span>
+            </div>
+        </div>
+    </div>
+
+    <div  class="galeria-tiendas">
+        <div *ngFor="let item of shops | paginate:page_size:page_number" class="div-imagen">
+            <img class="image" [src]="item.img" alt="">
+            <div class="middle">
+                <div class="link-gallery">
+                    <a class="" href="https://css-tricks.com/snippets/sass/black-white-opacity-mixins/">
+                        {{item.name}} 
+                        <i class="fas fa-arrow-right"></i>
+                    </a> 
+                </div>
+            </div>
+        </div>
+
+
+
+    
+    </div>
+
+    <!-- <div class="card text-center m-3"> -->
+     
+<!-- <div class="card-footer pb-0 pt-3"> -->
+    <!-- vincular este items con la lista de tiendas -->
+    <div class="paginador">
+        <mat-paginator 
+                [length]="shops.length"
+                [pageSize]="page_size"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="handlePage($event)">
+        </mat-paginator>
+
+        <!-- <jw-pagination [items]="shops" [pageSize]=12 (changePage)="onChangePage($event)"></jw-pagination> -->
+    </div>
+<!-- </div> -->
+
+
+
+    <!-- <div class="mobile">
+        <app-floating-menu></app-floating-menu>
+    </div> -->
+
+</div>
+
+
