@@ -1,20 +1,24 @@
 <div class="tiendas-container">
     
+    <!-- <div> -->
+     <app-carrousel></app-carrousel>
+    <!-- </div> -->
+
     <div class="desktop categorias-side">
         <h4>Categorias</h4>
-        <a href="">Belleza</a>
+        <a [routerLink]="['/stores']">Belleza</a>
         <a href="">Salud</a>
         <a href="">Estudio</a>
         <a href="">Otrp</a>
         <a href="">Otra</a>
     </div>
 
-    <div class="buscador">
-        <h3>Tiendas de Akia</h3>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div pageScroll  id="arriba" class="buscador">
+        <h3 class="title-tiendas" #section1 >Tiendas de Akia</h3>
+        <div class="input-group mb-3 caja-input">
+            <input type="text" class="form-control" placeholder="Nombre de tienda" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">@example.com</span>
+              <button class="btn btn-secondary" type="button" id="button-addon2">Buscar</button>
             </div>
         </div>
     </div>
@@ -53,12 +57,24 @@
     </div>
 <!-- </div> -->
 
-
-
-    <!-- <div class="mobile">
+    <div class="mobile">
         <app-floating-menu></app-floating-menu>
-    </div> -->
+    </div>
 
+    <div class="formulario">
+        <div class="form">
+            <h5>Renta un local con nosotros o solicita información</h5>  
+            <form-info-renta></form-info-renta>
+        </div>
+        
+        <div class="image-form">
+            <img src="../../../assets/imgFormTiendas.png" alt="">
+        </div>
+    </div>
+    <!-- <div class="step-section" [ngClass]="{'active': activeSection === 1}" pageScroll
+    (click)="fullPageScroll(section1, 1)">
+    subir
+  </div> -->
 </div>
 
 

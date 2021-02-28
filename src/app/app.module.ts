@@ -22,6 +22,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
 import { PaginatePipe } from './pipes/paginate.pipe';
 import {CustomMatPaginatorIntl} from './paginator-es';
+import { FormInfoRentaComponent } from './components/form-info-renta/form-info-renta.component';
+// SCROLL INTO PAGE
+// import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+// google maps
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +42,8 @@ import {CustomMatPaginatorIntl} from './paginator-es';
     FamiliaAkiaComponent,
     ConocenosComponent,
     FloatingSideMenuComponent,
-    PaginatePipe
+    PaginatePipe,
+    FormInfoRentaComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,13 @@ import {CustomMatPaginatorIntl} from './paginator-es';
     NgbModule,
     JwPaginationModule,
     BrowserAnimationsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    NgxPageScrollCoreModule.forRoot({ duration: 1600 }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDqPgHdZTk0vIZO2Ky2Z1sjQo_NtW0CKJU'
+      // apiKey: 'AIzaSyAC7D5FiKltj1jTo_0-XAH5SykTZMUqE3g'
+    })
+    // NgxPageScrollModule
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: CustomMatPaginatorIntl }],
   bootstrap: [AppComponent]

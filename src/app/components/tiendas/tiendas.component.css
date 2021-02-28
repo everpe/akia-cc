@@ -2,50 +2,193 @@
     padding-left: 2em;
     padding-right: 2em;
     display: grid;
-    background-color: brown;
+    /* background-color: brown; */
     /* grid-gap:9px; */
-    padding: 5px;
-    grid-template-columns: repeat(4,1fr);
+    padding: 0px;
+    grid-template-columns: 250px repeat(3,1fr);
     grid-template-rows: repeat(auto-fill,auto);
-    grid-template-areas: "categorias  buscador   buscador   buscador"
+    grid-template-areas: 
+                         "banner      banner    banner      banner" 
+                         "categorias  buscador   buscador   buscador"
                          "categorias  galeria    galeria    galeria"
                          "categorias  galeria    galeria    galeria"
-                         "categorias   paginador  paginador  paginador";
+                         "categorias   paginador  paginador  paginador"
+                         "formulario  formulario  formulario  formulario";
 }
-
+.mobile{
+  visibility: hidden;
+}
+app-carrousel{
+  grid-area: banner;
+}
+.title-tiendas{
+  padding-top: 5%;
+  padding-bottom:1% ;
+}
 .categorias-side{
     grid-area: categorias;
-    background-color: yellow;
+    padding-top: 40%;
+    padding-left: 10%;
+    /* background-color: yellow; */
     justify-content: center;
-    text-align: center;
+    text-align: left;
 }
 .categorias-side a{
+  text-decoration: none;
+    color: var(--gris-oscuro);
     display: block;
+}
+.categorias-side a:hover{
+  background-color: var(--gris-claro);
 }
 .buscador{
     grid-area: buscador;
-    background-color: blue;
+    padding-top: 1%;
+    padding-right: 5%;
 }
 
 .galeria-tiendas{
+    padding-right: 5%;
     grid-area: galeria;
     display: grid;
     grid-gap: 12px;
-    /* grid-template-columns: repeat(auto-fill,minmax(150,auto)); */
+    /* grid-template-columns: repeat(auto-fill,minmax(140px,auto)); */
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(auto-fill,auto);
+    /* grid-template-rows: repeat(auto-fill,minmax(140px,auto)); */
 }
 .galeria-tiendas img{
-    max-width: 100%;
+    /* max-width: 100%; */
 }
 
+/* HOVER TIENDAS */
+.div-imagen {
+    position: relative;
+    width: 100%;
+  }
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .div-imagen:hover .image {
+    opacity: 0.5;
+  }
+  .div-imagen:hover .middle{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.609);
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .middle .link-gallery{
+    display: flex;
+    align-items: center;
+  }
+  .middle .link-gallery a{
+      font-weight: var(--negrita);
+      text-decoration: none;
+      color: var(--color-verde);
+  }
+/* END HOVER */
+
+
+
+
+
+/* ESTILOS PAGINACION */
 .paginador{
     display: flex;
     justify-content: center;
     text-align: center;
     grid-area: paginador;
+    padding-top: 1%;
 }
-.page-item next-item {
-    background-color: red !important;
-    border: solid red !important;
+:host ::ng-deep.mat-paginator {
+  color:white;
+  font-size: 1em;
+}
+:host ::ng-deep.mat-paginator .mat-paginator-page-size-label {
+  /* color: white; */
+}
+:host ::ng-deep.mat-paginator .mat-paginator-container{
+  justify-content: flex-start;
+  background-color: var(--color-verde);
+  border-radius: 5px;
+  height: 8%;
+
+}
+:host ::ng-deep.mat-paginator .mat-form-field-wrapper{
+  /* color: yellow; */
+}
+/* END ESTILOS PAGINACION */
+
+/* FORMULARIO */
+.formulario{
+  grid-area: formulario;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.form{
+  padding: 5%;
+  /* background-color: pink; */
+}
+
+.image-form{
+  padding: 5%;
+  padding-top: 10%;
+  /* background-color: aqua; */
+}
+.image-form img{
+  max-width: 100%;
+}
+
+
+/* END FORMULARIO */
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .desktop{
+      display: none;
+  }
+  .mobile{
+    visibility: visible;
+  }
+  .buscador{
+    padding: 0px;
+  }
+  .galeria-tiendas{
+    padding: 0px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    /* grid-template-rows: repeat(auto-fill,auto); */
+  }
+  :host ::ng-deep.mat-paginator .mat-paginator-container{
+    height: 15px;
+  }
+  .tiendas-container{
+    grid-template-areas:"banner  banner   banner   banner" 
+                        "buscador  buscador   buscador   buscador"
+                         "galeria  galeria    galeria    galeria"
+                         "galeria  galeria    galeria    galeria"
+                         "paginador   paginador  paginador  paginador"
+                         "formulario  formulario  formulario  formulario";
+  }
+
+  .formulario{
+    grid-template-columns: 1fr;
+  }
+  
 }

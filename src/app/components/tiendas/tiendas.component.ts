@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Inject ,Component, OnInit } from '@angular/core';
 import {PageEvent} from '@angular/material/paginator';
+import { DOCUMENT } from '@angular/common';
+import { PageScrollService } from 'ngx-page-scroll-core';
+
 @Component({
   selector: 'app-tiendas',
   templateUrl: './tiendas.component.html',
@@ -17,6 +20,11 @@ export class TiendasComponent implements OnInit {
    pageEvent: PageEvent;
 
   shops:any=[ 
+   
+    {
+      "img":"../../../assets/tiendaZara.png",
+      "name":"Zara 1"
+    },
     {
       "img":"../../../assets/tiendaJuanV.png",
       "name":"Tienda Juan 1"
@@ -24,10 +32,6 @@ export class TiendasComponent implements OnInit {
     {
       "img":"../../../assets/tiendaZara.png",
       "name":"Zara 1"
-    },
-    {
-      "img":"../../../assets/tiendaJuanV.png",
-      "name":"Otra Tienda 2"
     },
     {
       "img":"../../../assets/tiendaZara.png",
@@ -76,18 +80,44 @@ export class TiendasComponent implements OnInit {
 
   ]
 
+  // scroll
+  activeSection = 1;
 
-  constructor() { }
+
+  constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  }
 
   ngOnInit(): void {
-    // // an example array of 150 items to be paged
-    // this.items = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
-  
-  }
+    this.pageScrollService.scroll({
+      document: this.document,
+      scrollTarget: '.theEnd',
+    });
+   }
+
+   /**
+    * Define propiedades del MatPaginator
+    * @param event 
+    */
   handlePage(event:PageEvent){
     this.page_size=event.pageSize;
     // suma uno al indice d pagina xq emppieza en 0
     this.page_number= event.pageIndex + 1;
   }
+
+
+  /**
+   * Le envia la seccion a la que quiere movers y el num para la variable seccionActual
+   * @param e 
+   * @param i 
+   */
+  fullPageScroll(e: HTMLElement, i) {
+    this.pageScrollService.scroll({
+      scrollTarget: e,
+      document: this.document
+    });
+    this.activeSection = i;
+  }
+
+
 
 }

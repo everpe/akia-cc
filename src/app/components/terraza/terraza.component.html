@@ -1,1 +1,117 @@
-<p>terraza works!</p>
+<div class="contenedor-terraza">
+   
+    <h2 class="title">TERRAZA</h2>
+   
+    <div class="tabs">
+        <a [href]="" pageScroll
+        (click)="fullPageScroll(amenidades, 1)">Amenidades</a>
+        <a (click)="fullPageScroll(galeria, 1)">Galeria</a>
+        <a (click)="fullPageScroll(footer, 1)">Contacto</a>
+        <hr class="linea-hr">
+    </div>
+    <div class="image-terraza">
+        <img src="../../../assets/imageTerraza.png" alt="">
+        <img class="iconoVerde" src="../../../assets/akiaVerde115.png" alt="">
+        <img class="iconoLinea" src="../../../assets/Line 6.png" alt="">
+    </div>
+    <div class="cuadro-text">
+        <div class="enmarque">
+            <h4>Te ofrecemos el mejor espacio para compartir</h4>
+            <p>El Año Nuevo Chino es la festividad más relevante del calendario chino,
+                celebrado en otros países del este de Asia, como Singapur
+                y Corea del Sur. Es conocida igualmente como Fiesta de la
+                Primavera o Año Nuevo Lunar.
+            </p>
+        </div>
+    </div>
+
+
+
+    <div #amenidades class="seccion">
+        <div class="otro">
+            <div class="box-pasos">
+                <p class="catering">Catering</p>
+                <p class="vigilancia">Vigilancia</p>
+                <p class="estacionamiento">Estacionamiento</p>
+                <p class="asistencia">Asistencia privada</p>
+            </div>
+            <div class="box-amenidad">   
+                    <div class="box-img-amenidad">
+                        <img src="../../../assets/imageAminidad.png" alt="">
+                    </div> 
+                    <div class="txt-amenidades">
+                        <h5>Amenidades</h5>  
+                    </div>
+                    <div class="img-logoPaseoAkia">
+                        <img src="../../../assets/mobil/logoPaseoAkia.png" alt="">
+                    </div>
+            </div>
+        </div>
+             
+    </div>
+   
+
+    <h3 #galeria class="title-galeria">Galeria</h3>
+    <div class="galery">
+        <!-- <div class="item1"> -->
+            <!-- 1 -->
+            <img class="item1" src="../../../assets/gal-1.png" alt="">
+        <!-- </div> -->
+        <!-- <div class="item2"> -->
+            <!-- 2 -->
+            <img class="item2" src="../../../assets/gal-4.png" alt="">
+        <!-- </div> -->
+        <!-- <div class="item3"> -->
+            <!-- 3 -->
+            <img class="item3" src="../../../assets/gal-2.png" alt="">
+        <!-- </div> -->
+        <!-- <div class="item4"> -->
+            <!-- 4 -->
+            <img  class="item4" src="../../../assets/gal-5.png" alt="">
+        <!-- </div> -->
+        <!-- <div class="item5"> -->
+            <!-- 5 -->
+            <img class="item5" src="../../../assets/gal-3.png" alt="">
+            
+        <!-- </div> -->
+        <!-- <div class="item6"> -->
+            <!-- 6 -->
+            <img class="item6" src="../../../assets/gal-6.png" alt="">
+        <!-- </div> -->
+    </div>
+
+    <div class="box-descri">
+        <p class="descripcion">Existe una tendencia por realizar propuestas funcionales que impulsen el
+            desarrollo social y económico de un estado, y en conjunto a estas creaciones 
+            se logra impulsar también la economía de un país.</p>
+    </div>
+    
+    <h3 class="title-map">Ubicación</h3>
+    <div class="box-ubicacion">
+        <div class="text-ubicacion">
+            <img src="../../../assets/mobil/logoPaseoAkia.png" alt="">
+            <p>3do. Nivel Centro Akia.
+                Blvd. Puerta de Hierro 4965, Col. Puerta de Hierro.
+                Ciudad de méxico
+            </p>
+        </div>
+        
+    </div>
+    <div class="map">
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=Morelos%20mexico&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <a href="https://yt2.org/youtube-to-mp3-ALeKk00qEW0sxByTDSpzaRvl8WxdMAeMytQ1611842368056QMMlSYKLwAsWUsAfLipqwCA2ahUKEwiikKDe5L7uAhVFCuwKHUuFBoYQ8tMDegUAQCSAQCYAQCqAQdnd3Mtd2l6"></a><br><style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}</style><style>.gmap_canvas {overflow:hidden;height:100%;width:100%;}</style>
+            </div></div>
+            <div  #footer></div>
+        <!-- <agm-map  [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map> -->
+    </div>
+
+   
+
+
+
+
+</div>
