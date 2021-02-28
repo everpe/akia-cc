@@ -28,6 +28,7 @@ import { FormInfoRentaComponent } from './components/form-info-renta/form-info-r
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 // google maps
 import { AgmCoreModule } from '@agm/core';
+import { FormHablaConNosotrosComponent } from './components/form-habla-con-nosotros/form-habla-con-nosotros.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { AgmCoreModule } from '@agm/core';
     ConocenosComponent,
     FloatingSideMenuComponent,
     PaginatePipe,
-    FormInfoRentaComponent
+    FormInfoRentaComponent,
+    FormHablaConNosotrosComponent
   ],
   imports: [
     BrowserModule,
