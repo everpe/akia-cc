@@ -145,19 +145,19 @@
     </div>
     <div class="galeria-tiendas">
         <!--NgFor Aca  -->
-        <div class="div-imagen">
+        <div *ngFor="let shop of shops" class="div-imagen">
          
-            <img class="image" src="../../../assets/tiendaJuanV.png" alt="">
+            <img class="image" [src]=shop.img>
             <div class="middle">
                 <div class="link-gallery">
                     <a class="" href="https://css-tricks.com/snippets/sass/black-white-opacity-mixins/">
-                        Ver Mas 
+                        {{shop.name}}
                         <i class="fas fa-arrow-right"></i>
                     </a> 
                 </div>
             </div>
         </div>
-        <div class="div-imagen">
+        <!-- <div class="div-imagen">
             <img class="image" src="../../../assets/tiendaZara.png" alt="">
             <div class="middle">
                 <div class="link-gallery">
@@ -233,7 +233,7 @@
                     </a> 
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     
     <div class="text2">
@@ -246,49 +246,17 @@
         <a href="#">Ver todas</a>
     </div>
     <div class="noticias">
-        <div class="noti">
+        <div *ngFor="let new of news" class="noti">
             <div class="card" >
-                <img class="card-img-top" src="../../../assets/anoNuevo.png" alt="">
+                <img class="card-img-top" [src]=new.img alt="">
                 <div class="card-body">
-                  <h4>Celebra con nosotros el año nuevo chino</h4>  
-                  <p class="card-text">Some quick example text to build on 
-                    the card title and make up the bulk of the card's content
-                    the card title and make up the bulk of the card's content.</p>
-                    <div class="inferior-card">
-                        <span>Ayer</span>
-                        <a href="">Seguir Leyendo</a>
-                    </div>
+                    <h4>{{new.title}}</h4>  
+                    <p class="card-text">{{new.description}}</p>
+                      
                 </div>
-            </div>
-            
-        </div>
-        <div class="noti">
-            <div class="card" >
-                <img class="card-img-top" src="../../../assets/anoNuevo.png" alt="">
-                <div class="card-body">
-                    <h4>Celebra con nosotros el año nuevo chino</h4>  
-                    <p class="card-text">Some quick example text to build on 
-                      the card title and make up the bulk of the card's content
-                      the card title and make up the bulk of the card's content.</p>
-                      <div class="inferior-card">
-                        <span>Ayer</span>
-                        <a href="">Seguir Leyendo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="noti">
-            <div class="card" >
-                <img class="card-img-top" src="../../../assets/anoNuevo.png" alt="">
-                <div class="card-body">
-                    <h4>Celebra con nosotros el año nuevo chino</h4>  
-                    <p class="card-text">Some quick example text to build on 
-                      the card title and make up the bulk of the card's content
-                      the card title and make up the bulk of the card's content.</p>
-                      <div class="inferior-card">
-                        <span>Ayer</span>
-                        <a href="">Seguir Leyendo</a>
-                    </div>
+                <div class="inferior-card">
+                    <span>{{new.date}}</span>
+                    <a href="">Seguir Leyendo</a>
                 </div>
             </div>
         </div>

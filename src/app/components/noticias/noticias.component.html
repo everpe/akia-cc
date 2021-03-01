@@ -1,1 +1,85 @@
-<p>noticias works!</p>
+<div class="noticias-container">
+    
+    <div class="banner desktop">
+        <img src="../../../assets/bannerNoticias.png" alt="">
+    </div>
+     <!-- <app-carrousel></app-carrousel> -->
+
+    <div class="desktop categorias-side">
+        <h4>Categorias</h4>
+        <a [routerLink]="['/stores']">Belleza</a>
+        <a href="">Salud</a>
+        <a href="">Estudio</a>
+        <a href="">Otrp</a>
+        <a href="">Otra</a>
+    </div>
+
+    <div class="mobile">
+        <h3 class="title-noticias" >Noticias</h3>
+        <p>Descubre lo que pasa en tú centro comercial favorito</p>
+    </div>
+    <div pageScroll  id="arriba" class="buscador desktop">
+        <h3 class="title-noticias" #section1 >Noticias</h3>
+        <div class="input-group mb-3 caja-input">
+            <input type="text" class="form-control" placeholder="Nombre de tienda" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="button-addon2">Buscar</button>
+            </div>
+        </div>
+    </div>
+
+    <div  class="galeria-noticias">
+            <div *ngFor="let item of shops | paginate:page_size:page_number" class="div-imagen">
+                
+                    <div class="noti">
+                        <div class="card" >
+                            <img class="card-img-top" [src]="item.img" alt="">
+                            <div class="card-body">
+                                <h4>{{item.title}}</h4>  
+                                <p class="card-text">
+                                    {{item.description}}
+                                </p>
+                                <div class="inferior-card">
+                                    <span>{{item.date}}</span>
+                                    <!-- aca noticia/id -->
+                                    <a href="">Seguir Leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                <!-- <img class="image" [src]="item.img" alt="">
+                <div class="middle">
+                    <div class="link-gallery">
+                        <a class="" href="https://css-tricks.com/snippets/sass/black-white-opacity-mixins/">
+                            {{item.name}} 
+                            <i class="fas fa-arrow-right"></i>
+                        </a> 
+                    </div>
+                </div> -->
+            </div>
+    </div>    
+    <!-- <div class="card text-center m-3"> -->
+     
+<!-- <div class="card-footer pb-0 pt-3"> -->
+    <!-- vincular este items con la lista de tiendas -->
+    <div class="paginador">
+        <mat-paginator 
+                [length]="shops.length"
+                [pageSize]="page_size"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="handlePage($event)">
+        </mat-paginator>
+    </div>
+<!-- </div> -->
+
+    <div class="mobile">
+        <app-floating-menu></app-floating-menu>
+    </div>
+
+
+
+</div>
+
+
+

@@ -3,7 +3,7 @@
 	color: white;
 	font-size: 20px; 
 	grid-area: footer;
-	padding: 25px; 
+	padding: 5%; 
 	text-align: right;
 	box-shadow: 0px 0px 70px rgba(102, 102, 102, 0.2);
     height: 100%;
@@ -16,10 +16,12 @@
 					'col1	col1   enlaces1  enlaces2'
 					'logo   redes   enlaces1     enlaces2'
 					'copyright 	copyright  copyright	copyright ';
+					
 						   
 }
 
 .footer .col1{
+	padding-left: 4%;
 	grid-area: col1;
 	text-align: left;	
 }
@@ -28,6 +30,7 @@
 }
 
 .footer .col2{
+	padding-left: 30%;
 	padding-top: 2em;
 	text-align: center;
 	grid-area: enlaces1;
@@ -108,5 +111,11 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+	.footer .col2{
+		padding-left: 5%;
+	}
+	.footer .col3{
+		padding-left: 5%;
 	}
 }

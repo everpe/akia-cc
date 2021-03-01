@@ -23,8 +23,9 @@ const routes: Routes = [
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
+// {useHash:true} para el problema de cuando se recarga en ruta en produccion
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], 
+  imports: [RouterModule.forRoot(routes,{useHash:true})], 
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
