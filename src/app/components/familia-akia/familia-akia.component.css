@@ -1,0 +1,218 @@
+.container-familia{
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns:22% repeat(2,1fr) ;
+    grid-template-areas:
+                        "title        hr        hr       "
+                        "logo1      descri1   descri1 "
+                        "title2       title2    title2   "
+                        "marcas       marcas     marcas   "
+                        "cVerde      cVerde      cGris  "
+                        "title3       title3     title3   "
+                        "cards        cards      cards    ";
+    padding:2% 3% 2% 3%;
+}
+.title{
+    padding: 3%;
+    padding-left: 0%;
+    grid-area: title;
+    color: var(--gris-oscuro);
+}
+.linea{
+    width: -150%;
+    padding-right: 2%;
+    padding-top: 2%;
+    grid-area: hr;
+}
+.linea hr{background-color: var(--gris-oscuro);}
+.logo{
+    grid-area: logo1;
+    background-color:var(--color-verde);
+    text-align: center;
+    color:white;
+}
+.logo hr{
+    width: 80%;
+    margin: auto;
+    background-color: white;
+}
+.logo h6{
+    padding: 5%;
+}
+.descri{
+    color: var(--gris-oscuro);
+    
+    grid-area: descri1;
+    text-align: center;
+    padding-left: 4%;
+    padding-right: 4%;
+    
+}
+.descri .marco{
+    border: solid 1px var(--gris-oscuro);
+    padding: 5%;
+}
+.descri h6{
+    font-family: 'Playfair Display';
+    padding: 2%;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+.btn-contacto{
+    color: white;
+  background-color: var(--color-verde);  
+}
+.title-marcas{
+    grid-area: title2;
+    text-align: center;
+    padding-top: 5%;
+}
+.title-marcas h4{
+    color: var(--color-verde);
+    margin: auto;
+    width: 30%;
+    border-bottom: solid 1px var(--color-verde);
+}
+/* Grid con las marcas */
+.marcas{
+    grid-area: marcas;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(3 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:"img1 img2 img3"
+                        "img4 img5 img3";
+    padding: 2%;
+    /* border: solid red; */
+}
+.marcas img{
+    max-width: 100%;
+}
+.spyral{
+    grid-area: img3;
+}
+/* End Marcas */
+
+/* Cuadros Verd-Gris */
+.section-cuadros{
+    grid-area: cuadros;
+    background-color: green;
+}
+.c-verde{
+    position: relative;
+    grid-area: cVerde;
+    background-color: var(--color-verde);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 3%;
+    padding-left: 15%;
+    padding-right: 15%;
+    color: white;
+    /* grid-template-columns: repeat(3, 1fr); */
+}
+.content img{max-width: 100%;}
+.cubo1{
+    position: absolute;
+    top:1%;
+    left: 0px;
+}
+.cubo2{
+    position: absolute;
+    right: 0px;
+    bottom: 1%;
+}
+.c-verde .content{
+    
+}
+.c-gris{
+    grid-area: cGris;
+    padding: 0 16% 0 16%;
+}
+.c-gris .marco{
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    background-color:var(--gris-oscuro);
+    padding:12% 8% ;
+    color: white;
+}
+
+
+.title-explora{
+    grid-area: title3;
+    padding: 2% 0;
+}
+.cards{
+    grid-area: cards;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+}
+.cards img{
+    max-width: 100%;
+}
+
+
+
+
+/* RESPPNSIVE */
+@media screen and (max-width: 768px) {
+    .desktop{
+        visibility: hidden;
+    }
+    .container-familia{
+        grid-template-areas:
+                        "title       title      title       "
+                        "hr            hr       hr"
+                        "descri1      descri1   descri1 "
+                        "logo1      logo1       logo1"
+                        "title2       title2    title2   "
+                        "marcas       marcas     marcas   "
+                        "cVerde      cVerde      cVerde  "
+                        "cGris      cGris       cGris"
+                        "title3       title3     title3   "
+                        "cards        cards      cards    ";
+    }
+    .title{
+        text-align: center;
+    }
+    .linea{
+        padding: 0%;
+    }
+    .c-verde,.c-gris{
+        padding: 5%;
+    }
+    .descri{
+        padding: 0;
+    }
+    .title-marcas h4{
+        width: 100%;
+    }
+
+    /* Marcas Grid */
+    .marcas{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:"img1 img2 "
+                            "img4 img5 "
+                            "img3 img3";
+    }
+    /* Cards Grid */
+    .cards{
+        padding: 0px;
+        grid-template-columns: 1fr ;
+    }
+    .card{
+        padding: 0px;
+    }
+    .card img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .no-gutters{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

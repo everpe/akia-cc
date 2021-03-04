@@ -17,9 +17,10 @@
 
 }
 
-.home h3{
+/* .home h3{
     font-weight: var(--negrita);
-}
+    font-family: 'Playfair Display';
+} */
 .home h4{
     font-weight: 600;
     /* color: red; */
@@ -61,8 +62,11 @@ app-carrousel{
 .span-conocenos a{
     color: white;
     font-weight: 500;
+    
 }
-
+.span-conocenos i{
+    font-size: 30px;
+}
 
 .familia{
     grid-area: familia;
@@ -202,6 +206,9 @@ app-carrousel{
     grid-template-columns: repeat(3,minmax(200px,1fr));
    
 }
+.card-body h4{
+    font-family: 'Montserrat' !important;
+}
 .noticias .card{
     /* border: solid 5px red; */
     height: 100%;
@@ -296,12 +303,10 @@ app-carrousel{
         font-size: 1em;
     }
     .span-conocenos{
-        display:block;
-        /* background-color: red; */
-        
+        justify-content: left;  
     }
     .span-conocenos a{
-        margin-left: 30%;
+        /* margin-left: 30%; */
     }
 
     .text2{

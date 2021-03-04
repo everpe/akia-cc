@@ -13,6 +13,7 @@
                          "categorias  galeria    galeria    galeria"
                          "categorias  galeria    galeria    galeria"
                          "categorias   paginador  paginador  paginador"
+                         "linea         linea     linea       linea"
                          "formulario  formulario  formulario  formulario";
 }
 .mobile{
@@ -48,6 +49,7 @@ app-carrousel{
 }
 
 .galeria-tiendas{
+  padding: 0 3% 0% 0%;
     padding-right: 5%;
     grid-area: galeria;
     display: grid;
@@ -118,7 +120,7 @@ app-carrousel{
     padding-top: 1%;
 }
 :host ::ng-deep.mat-paginator {
-  color:white;
+  /* color:white; */
   font-size: 1em;
 }
 :host ::ng-deep.mat-paginator .mat-paginator-page-size-label {
@@ -126,7 +128,7 @@ app-carrousel{
 }
 :host ::ng-deep.mat-paginator .mat-paginator-container{
   justify-content: flex-start;
-  background-color: var(--color-verde);
+  background-color: var(--gris-claro);
   border-radius: 5px;
   height: 8%;
 
@@ -142,8 +144,21 @@ app-carrousel{
   display: grid;
   grid-template-columns: repeat(2,1fr);
 }
+.line{
+  grid-area: linea;
+  width: 100%;
+  padding-top: 2%;
+  padding-left: 4%;
+  padding-right:5% ;
+}
+.line hr{
+  /* grid-area: linea; */
+  width: 100%;
+  background-color: var(--color-verde);
+}
 .form{
-  padding: 5%;
+  padding: 6%;
+  padding-top: 10%;
   /* background-color: pink; */
 }
 
@@ -168,15 +183,19 @@ app-carrousel{
     visibility: visible;
   }
   .buscador{
-    padding: 0px;
+    padding: 0 2% 0% 2%;
   }
   .galeria-tiendas{
-    padding: 0px;
+    padding: 0 2% 0% 2%;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     /* grid-template-rows: repeat(auto-fill,auto); */
   }
+  .paginador{
+    margin-top: 2%;
+    padding: 0 2% 0% 2%;
+  }
   :host ::ng-deep.mat-paginator .mat-paginator-container{
-    height: 15px;
+    height: auto;
   }
   .tiendas-container{
     grid-template-areas:"banner  banner   banner   banner" 

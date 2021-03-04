@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { JwPaginationModule } from 'jw-angular-pagination';
-
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -24,10 +22,9 @@ import { PaginatePipe } from './pipes/paginate.pipe';
 import {CustomMatPaginatorIntl} from './paginator-es';
 import { FormInfoRentaComponent } from './components/form-info-renta/form-info-renta.component';
 // SCROLL INTO PAGE
-// import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 // google maps
-import { AgmCoreModule } from '@agm/core';
+// import { AgmCoreModule } from '@agm/core';
 import { FormHablaConNosotrosComponent } from './components/form-habla-con-nosotros/form-habla-con-nosotros.component';
 @NgModule({
   declarations: [
@@ -51,15 +48,13 @@ import { FormHablaConNosotrosComponent } from './components/form-habla-con-nosot
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    JwPaginationModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
     NgxPageScrollCoreModule.forRoot({ duration: 1600 }),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDqPgHdZTk0vIZO2Ky2Z1sjQo_NtW0CKJU'
-      // apiKey: 'AIzaSyAC7D5FiKltj1jTo_0-XAH5SykTZMUqE3g'
-    })
-    // NgxPageScrollModule
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyDqPgHdZTk0vIZO2Ky2Z1sjQo_NtW0CKJU'
+    //   // apiKey: 'AIzaSyAC7D5FiKltj1jTo_0-XAH5SykTZMUqE3g'
+    // })
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: CustomMatPaginatorIntl }],
   bootstrap: [AppComponent]

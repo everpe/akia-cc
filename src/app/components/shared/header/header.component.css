@@ -23,6 +23,14 @@ nav .logo {
 	justify-content: space-around;
 	align-items: center;
 }
+.logo img{
+	max-width: 100%;
+	width:auto;
+	height: auto;
+	/* background-size: 100% 100%; */
+	/* object-fit: cover; */
+	/* border:solid red; */
+}
 .txt-header{
 	font-size: 0.9em;
 	margin-bottom: 1%;
@@ -84,6 +92,10 @@ nav .icon-burger .line {
 	margin: 5px;
 	border-radius: 3px;
 	transition: all .3s ease-in-out;
+}
+.img-log-kia{
+	/* width: 17%; */
+	/* border: solid red; */
 }
 @media screen and (max-width: 768px) {
 	nav .logo {

@@ -19,6 +19,18 @@ body {
   background-color: #F7F8E2;
 	/* background-image: repeating-linear-gradient(90deg, #fff, #fff 20px, #fbfbfb 20px, #fbfbfb 40px); */
 }
+h1,h2{
+  font-weight: 600;
+  font-family: 'Playfair Display';
+}
+h3{
+  font-weight: var(--negrita);
+  font-family: 'Playfair Display';
+}
+h4{
+  font-weight: 500;
+  font-family: 'Playfair Display';
+}
 .contenedor {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

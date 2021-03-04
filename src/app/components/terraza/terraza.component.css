@@ -6,7 +6,7 @@
     padding-right:4% ;
     /* background-color: aquamarine; */
     grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(auto-fill,auto);
+    /* grid-template-rows: repeat(auto-fill,auto); */
     grid-template-areas: "title    title       tab       tab       tab"
                         "imagen    imagen     imagen   recuadro  recuadro"
                         "cuadro     cuadro      cuadro     cuadro    cuadro"
@@ -183,7 +183,7 @@
 .galery{
     /* padding-left:10% ;
     padding-right:10% ; */
-    height: 500px;
+    /* height: 500px; */
     /* padding: 5%; */
     padding-left:4% ;
     padding-right:4% ;
@@ -191,54 +191,72 @@
     grid-gap: 12px;
     /* background-color: blue; */
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(100px,1fr) );
-    /* grid-template-columns: repeat(6,1fr); */
-    grid-auto-rows: 100px auto;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+    padding: 20px;
     grid-auto-flow: row dense;
+    width: 90%;
+    /* border: solid red ; */
+    margin: auto;
 }
-.galery > div{
-    /* background-color: plum; */
-    border: solid 1px;
-}
+.galery > div{}
 .galery img{
-    /* max-width: 100%; */
-    width: 100%;
+    max-width: 100%;
+     /* width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; */
 }
-.galery .item1{
-    /* 2filas 2 columns */
-    grid-area: span 4 / span 5;
-    /* grid-column: 1 / span 3;
-    grid-row:1 / span 3; */
+.galery .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    background-color: #03afff;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .grid-item:hover {
+    filter: opacity(0.9);
+    transform: scale(1.04);
+  }
+.galery .uno{
+    background-image: url('../../../assets/gal-1.png');
+    grid-column: span 3;
+    grid-row: span 3;
 }
-.galery .item2{
-    background-color: beige;
-    grid-area: span 2 / span 1;
-    /* grid-column: 4 /5 ;
-    grid-row: 1 / 2; */
+.galery .dos{
+    background-image: url('../../../assets/gal-2.png');
+    grid-column: span 2;
 }
-.galery .item3 {
-    background-color: yellow;
-    grid-area: span 1 / span 4;
-    /* grid-row: 2/3 ; */
+.galery .tres {
+    background-image: url('../../../assets/gal-3.png');
+    grid-column: span 1;
+    grid-row: span 1;
 }
-.galery .item4{
-    background-color: red;
-    grid-area: span 1 / span 4;
-    /* grid-column: 5 /7 ; */
+.galery .cuatro{
+    background-image: url('../../../assets/gal-4.png');
+    grid-row: span 2;
+    
 }
-.galery .item5{
-    /* width: 100%; */
-    grid-area: span 2 / span 2;
-    /* grid-column: 5 /7;
-    grid-row: 2/4; */
+.galery .cinco{
+    background-image: url('../../../assets/gal-5.png');
+    grid-column: span 2;
+    
 }
-.galery .item6{
-    grid-area: span 2 / span 3;
+.galery .seis{
+    background-image: url('../../../assets/gal-6.png');
+    grid-column: span 2;
+    grid-row: span 1;
 }
 
 .box-descri{
+    /* border: solid blue;; */
     padding: 2%;
     padding-left:22% ;
     padding-right:22% ;
@@ -253,7 +271,7 @@
 
 .title-map{
     grid-area: title-map;
-    padding: 2%;
+    padding: 2% 0;
 }
 .map{
     padding-bottom: 20px;
@@ -291,20 +309,21 @@ agm-map {
         height: 400px;
     }
     .contenedor-terraza{
-        /* grid-template-columns:1fr ; */
+        grid-template-columns:1fr 1fr;
         grid-template-areas: 
-        "title    title     title    title    title"
-        "tab       tab       tab    tab        tab"
-        "imagen    imagen     imagen  imagen    imagen"
-        "recuadro  recuadro     recuadro  recuadro  recuadro"
-        "cuadro     cuadro      cuadro     cuadro    cuadro"
-        "cuadro     cuadro      cuadro     cuadro    cuadro"
-        "title-g   title-g    title-g   title-g   title-g "
-        "galeria   galeria    galeria   galeria     galeria"
-        "descri     descri     descri    descri      descri"
-        "title-map title-map   title-map title-map   title-map"
-        "text-map   text-map    text-map  text-map    text-map"
-        "mapa       mapa        mapa        mapa        mapa";
+        "title    title     "
+        "tab       tab      "
+        "imagen    imagen     "
+        "recuadro  recuadro     "
+        "cuadro     cuadro     "
+        "cuadro     cuadro      "
+        "title-g   title-g    "
+        "galeria   galeria    "
+        
+        "descri     descri     "
+        "title-map title-map   "
+        "text-map   text-map   "
+        "mapa       mapa        ";
     }
     .title{
         padding: 5%;
@@ -335,4 +354,41 @@ agm-map {
     .box-descri{
         padding: 5%;
     }
+
+    .box-img-amenidad img{
+        margin-bottom: 8%;
+    }
+
+    /*Responsive Galeria*/
+    .galery{
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+      }
+    
+      .galery .uno {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .dos {
+        grid-column: span 2;
+      }
+      .galery .tres{
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      .cuatro{
+        grid-row: span 2;
+      }
+      .cinco{
+        grid-column: span 1;
+      }
+      .galery .seis{
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .box-ubicacion{
+        padding: 0px;
+        padding-bottom: 4%;
+      }
 }
