@@ -121,6 +121,7 @@ app-carrousel{
     display: grid;
     grid-gap: 25px;
     grid-template-columns: repeat(3,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(auto, 400px));
 }
 
 .galeria-tiendas img{
@@ -139,7 +140,7 @@ app-carrousel{
     opacity: 1;
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     transition: .5s ease;
     backface-visibility: hidden;
   }
@@ -210,13 +211,10 @@ app-carrousel{
     font-family: 'Montserrat' !important;
 }
 .noticias .card{
-    /* border: solid 5px red; */
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3,50% 45% 20px);
-    /* padding-top: 2%;
-    padding-bottom: 2%; */
 }
 .noticias .card-img-top{
     width: 100%;
@@ -270,6 +268,9 @@ app-carrousel{
                          'text2        text2       text2     text2-a     text2-a'
                          'noticias  noticias    noticias    noticias    noticias';
     }
+    .text-conoce-tiendas{
+        padding-left:1em;
+    }
     .borde{
         text-align: center;
         display: block;
@@ -305,10 +306,6 @@ app-carrousel{
     .span-conocenos{
         justify-content: left;  
     }
-    .span-conocenos a{
-        /* margin-left: 30%; */
-    }
-
     .text2{
         grid-area: text2;
     }               
@@ -336,17 +333,15 @@ app-carrousel{
     .galeria-tiendas{
         grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     }
+    .galeria-tiendas img{
+        width: 100%;
+        height: 100%;
+    }
     .noticias{
         grid-gap: 10px;
         grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     }
     .noticias .card{
         grid-template-rows: repeat(3,50% 45% 50px);
-    }
-    /*INVERTIR SENTIDO CARD 
-    .noticias .card{
-        border: solid red;
-        display: -webkit-box;
-    } */
-  
+    }  
 }

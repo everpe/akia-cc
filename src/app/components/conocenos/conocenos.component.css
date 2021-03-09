@@ -9,6 +9,7 @@
 }
 .title{
     grid-area: title;
+    padding-top: 2%;
 }
 .image{
     grid-area: mapa;

@@ -1,5 +1,5 @@
 <input type="checkbox" class="checkbox" id="check">
-<label class="menu" for="check">
+<label [ngStyle]="{'position': position,'top': top }" class="menu" for="check">
     <!-- C<br>a<br>t<br>e<br>g<br>o<br>r<br>i<br>a<br>s -->
     <div *ngFor="let item of letersTitle">
         {{item}} <br>
@@ -8,25 +8,11 @@
 <div class="left-panel">
     <ul>
         
-        <a  href="">
-            <li *ngFor="let cat of categorias">
-                {{cat}}
+        <a *ngFor="let cat of categories" (click)="setShopsCategory(cat.id)" >
+            <li >
+                {{cat.name}}
             </li>
         </a>    
-        <!-- <a href=""><li>cursos</li></a>    
-        <a href=""><li>blog</li></a>  
-        <a href=""><li>devcode</li></a>    
-        <a href=""><li>cursos</li></a>    
-        <a href=""><li>blog</li></a>  
-        <a href=""><li>devcode</li></a>    
-        <a href=""><li>cursos</li></a>    
-        <a href=""><li>blog</li></a>  
-        <a href=""><li>devcode</li></a>    
-        <a href=""><li>cursos</li></a>    
-        <a href=""><li>blog</li></a>  
-        <a href=""><li>devcode</li></a>    
-        <a href=""><li>cursos</li></a>    
-        <a href=""><li>blog</li></a>     -->
     </ul>
 </div>
 

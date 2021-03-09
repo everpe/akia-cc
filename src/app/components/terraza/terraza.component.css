@@ -16,10 +16,13 @@
                         "title-map title-map  title-map title-map   title-map"
                         "text-map   text-map    mapa      mapa       mapa";
 }
-
+h3{
+    color:var(--gris-oscuro);
+}
 .title{
     grid-area: title;
     font-weight: 500;
+    color:var(--gris-oscuro);
 }
 .tabs{
     color:var(--gris-oscuro);

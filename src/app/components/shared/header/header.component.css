@@ -27,9 +27,6 @@ nav .logo {
 	max-width: 100%;
 	width:auto;
 	height: auto;
-	/* background-size: 100% 100%; */
-	/* object-fit: cover; */
-	/* border:solid red; */
 }
 .txt-header{
 	font-size: 0.9em;
@@ -52,7 +49,6 @@ nav .links li {
 	list-style: none;
 }
 nav .links li:hover{
-
 	border-bottom:solid #84BD00;
 }
 .links .redes{
@@ -69,6 +65,7 @@ nav .links a {
 	font-weight: bold;
 	color: rgb(0, 0, 0);
 	text-decoration: none;
+
 }
 nav .links a:hover{
 	color: #84BD00;
@@ -88,7 +85,7 @@ nav .icon-burger {
 nav .icon-burger .line {
 	width: 30px;
 	height: 5px;
-	background-color: #4D574C;
+	background-color:var(--gris-oscuro);
 	margin: 5px;
 	border-radius: 3px;
 	transition: all .3s ease-in-out;
@@ -147,6 +144,7 @@ nav .icon-burger .line {
 		font-size: 20px;
 	}
 	nav :checked ~ .links {
+		/* background-color: rgb(0, 255, 13); */
 		bottom: 0;
 	}
 	nav .icon-burger {
@@ -158,6 +156,7 @@ nav .icon-burger .line {
 	nav :checked ~ .icon-burger .line:nth-child(3) {
 		transform: translateY(-10px) rotate(-225deg);
 	}
+	/* desaparece la linea de la mitad del iconBurger */
 	nav :checked ~ .icon-burger .line:nth-child(2) {
 		opacity: 0;
 	}

@@ -7,7 +7,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarrouselComponent } from './components/shared/carrousel/carrousel.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TiendasComponent } from './components/tiendas/tiendas.component';
 import { TerrazaComponent } from './components/terraza/terraza.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
@@ -17,15 +17,15 @@ import { ConocenosComponent } from './components/conocenos/conocenos.component';
 import { FloatingSideMenuComponent } from './components/shared/floating-side-menu/floating-side-menu.component';
 // ANGULAR MATERIAL
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
 import { PaginatePipe } from './pipes/paginate.pipe';
-import {CustomMatPaginatorIntl} from './paginator-es';
+// import {CustomMatPaginatorIntl} from './paginator-es';
 import { FormInfoRentaComponent } from './components/form-info-renta/form-info-renta.component';
 // SCROLL INTO PAGE
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
-// google maps
-// import { AgmCoreModule } from '@agm/core';
 import { FormHablaConNosotrosComponent } from './components/form-habla-con-nosotros/form-habla-con-nosotros.component';
+import {MaterialModule} from '../app/components/material/material.module';
+// Modulo Admin
+import {AdminModule} from './admin/admin.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,16 +47,13 @@ import { FormHablaConNosotrosComponent } from './components/form-habla-con-nosot
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     BrowserAnimationsModule,
-    MatPaginatorModule,
     NgxPageScrollCoreModule.forRoot({ duration: 1600 }),
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyDqPgHdZTk0vIZO2Ky2Z1sjQo_NtW0CKJU'
-    //   // apiKey: 'AIzaSyAC7D5FiKltj1jTo_0-XAH5SykTZMUqE3g'
-    // })
+    MaterialModule,
+    AdminModule
+
+
   ],
-  providers: [{ provide: MatPaginatorIntl, useClass: CustomMatPaginatorIntl }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

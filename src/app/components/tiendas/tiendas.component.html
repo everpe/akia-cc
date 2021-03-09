@@ -6,11 +6,8 @@
 
     <div class="desktop categorias-side">
         <h4>Categorias</h4>
-        <a [routerLink]="['/stores']">Belleza</a>
-        <a href="">Salud</a>
-        <a href="">Estudio</a>
-        <a href="">Otrp</a>
-        <a href="">Otra</a>
+        <a (click)="setShops()">-Todas- </a>
+        <a *ngFor="let category of categories" (click)="setShopsCategory(category.id)" >{{category.name}}</a>
     </div>
 
     <div pageScroll  id="arriba" class="buscador">
@@ -25,7 +22,8 @@
 
     <div  class="galeria-tiendas">
         <div *ngFor="let item of shops | paginate:page_size:page_number" class="div-imagen">
-            <img class="image" [src]="item.img" alt="">
+            <img class="image" [src]="rutaImagesShops+item.image" alt="">
+            <h5>{{item.name}}</h5>
             <div class="middle">
                 <div class="link-gallery">
                     <a class="" href="https://css-tricks.com/snippets/sass/black-white-opacity-mixins/">
@@ -51,7 +49,12 @@
     </div>
 
     <div class="mobile">
-        <app-floating-menu></app-floating-menu>
+        <app-floating-menu 
+        [position]="positionCategoriasMenu" 
+        [top]="topCategorias"
+        [categories]="categories"
+        (propagar)="recibirShopsMenuMobile($event)">
+        </app-floating-menu>
     </div>
 
     <div style="width: 100%;" class="desktop line">
