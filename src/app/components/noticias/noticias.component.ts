@@ -130,13 +130,29 @@ export class NoticiasComponent implements OnInit {
   }
 
 /**
- * Lista todas las noticias
+ * Lista todas las noticias al iniciar
  */
   setAllNews(){
     this.newService.listAllNews().subscribe((response:any) =>
       {
         console.log(response.news);
         this.news=response.news;
+      },error=>{
+        console.log(error);
+      }
+    );
+  }
+
+
+  /**
+   * Lista las noticias que pertenecen a cierta categoria
+   * @param id 
+   */
+   setNewsCategory(id:string){
+    this.categoryService.showShopsByCategory(id).subscribe((response:any) =>
+      {
+        this.news=response.news;
+        console.log(response.news)
       },error=>{
         console.log(error);
       }

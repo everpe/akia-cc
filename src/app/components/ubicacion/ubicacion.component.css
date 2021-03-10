@@ -1,0 +1,47 @@
+.contenedor-ubicacion{
+    display: grid;
+    min-height: 400px;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr;
+}
+.box-ubicacion{
+    text-align: center;
+    width: 100%;
+}
+.box-ubicacion img{
+    max-width: 100%;
+}
+.map{
+    width:100%;
+}
+
+.text-ubicacion{
+    color:white;
+    height: 100%;
+    padding-top: 8%;
+    padding-left:15% ;
+    padding-right:15%;
+    background-color: var(--gris-oscuro);
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor-ubicacion{
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(200px,1fr);
+        padding: 0px;
+    }
+    .box-ubicacion{
+        height: 100%;
+    }
+    .text-ubicacion{
+        padding: 5%;
+    }
+    .map{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+}
+
+
+

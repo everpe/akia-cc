@@ -7,7 +7,8 @@
 
     <div class="desktop categorias-side">
         <h4>Categorias</h4>
-        <a *ngFor="let cat of categories" >{{cat.name}}</a>
+        <a (click)="setAllNews()">-Todas-</a>
+        <a *ngFor="let cat of categories" (click)="setNewsCategory(cat.id)" >{{cat.name}}</a>
     </div>
 
     <div class="mobile">
@@ -24,13 +25,13 @@
         </div>
     </div>
 
-    <div  class="galeria-noticias">
-            <div *ngFor="let item of news | paginate:page_size:page_number" class="div-imagen">
+    <div  class="g-noticias">
+            <div *ngFor="let item of news | paginate:page_size:page_number" class="noti">
                 <div class="card" >
                     <img class="card-img-top" [src]="rutaImagesShops+item.image" alt="">
                     <div class="card-body">
                         <h4>{{item.title}}</h4>  
-                        <p class="card-text">  {{item.description}}</p>
+                        <p class="card-text">  {{item.description | substring:0:110}}</p>
                     </div>
                     <div class="inferior-card">
                         <span>{{item.created_at| date}}</span>

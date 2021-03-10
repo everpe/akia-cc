@@ -164,7 +164,7 @@ export class TiendasComponent implements OnInit {
    * @param id
    */
   setShopsCategory(id:string){
-    this.categoryService.showShopsCategory(id).subscribe((response:any) =>
+    this.categoryService.showShopsByCategory(id).subscribe((response:any) =>
       {
         this.shops=response.shops;
         console.log(response);

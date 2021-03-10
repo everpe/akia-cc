@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
       "title":"Año nuevo en Colomnbia",
       "description":"ome quick example text to build on \n" +
         "the card title and make up the Some quick example text to build on",
-      "img":"../../../assets/anoNuevo.png",
+      "img":"../../../assets/noticias/tres.png",
       "date":"28/02/2021"
     },
     {
@@ -62,7 +62,46 @@ export class HomeComponent implements OnInit {
         "the card title and make up the Some quick example text to build on \n",
       "img":"../../../assets/anoNuevo.png",
       "date":"28/02/2021"
+    },
+    {
+      "title":"Año nuevo en Colomnbia",
+      "description":"ome quick example text to build on \n" +
+        "the card title and make up the Some quick example text to build on",
+      "img":"../../../assets/noticias/tres.png",
+      "date":"28/02/2021"
     }
+    ,
+    {
+      "title":"Año nuevo en Colomnbia",
+      "description":"ome quick example text to build on \n" +
+        "the card title and make up the Some quick example text to build on"+ 
+        "the card title and make up the Some quick example text to build on \n",
+      "img":"../../../assets/anoNuevo.png",
+      "date":"28/02/2021"
+    },
+    {
+      "title":"Año nuevo en Colomnbia",
+      "description":"ome quick example text to build on \n" +
+        "the card title and make up the Some quick example text to build on",
+      "img":"../../../assets/noticias/tres.png",
+      "date":"28/02/2021"
+    },
+    {
+      "title":"Año nuevo en Colomnbia",
+      "description":"ome quick example text to build on \n" +
+        "the card title and make up the Some quick example text to build on"+ 
+        "the card title and make up the Some quick example text to build on \n",
+      "img":"../../../assets/anoNuevo.png",
+      "date":"28/02/2021"
+    },
+    {
+      "title":"Año nuevo en Colomnbia",
+      "description":"ome quick example text to build on \n" +
+        "the card title and make up the Some quick example text to build on",
+      "img":"../../../assets/noticias/tres.png",
+      "date":"28/02/2021"
+    }
+
   ]
   constructor() { }
 

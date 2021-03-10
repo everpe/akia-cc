@@ -1,0 +1,40 @@
+.container-frame{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(50px,auto);
+    text-align: center;
+}
+.container-frame h2{
+    color: var(--gris-oscuro);
+}
+.container-frame hr{
+    background-color: var(--gris-oscuro);
+}
+button{
+    border: solid red;
+}
+.boton{
+    border: solid red;
+}
+
+::ng-deep.mat-dialog-container {
+    background-color: #DFDECA;
+    position: relative;
+    
+}
+.boton{
+    position:absolute;
+    top: 0px;
+    right: 2px;
+    font-size: 25px;
+    color: var(--gris-oscuro);
+}
+.dialog button{
+    
+}
+
+@media screen and (max-width: 768px) {
+    .container-frame h2{
+        padding-top: 5%;
+    }
+}

@@ -26,6 +26,11 @@ import { FormHablaConNosotrosComponent } from './components/form-habla-con-nosot
 import {MaterialModule} from '../app/components/material/material.module';
 // Modulo Admin
 import {AdminModule} from './admin/admin.module';
+import { SubstringPipe } from './pipes/substring.pipe';
+import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
+import { ShowShopComponent } from './components/show-shop/show-shop.component';
+import { ShowNewComponent } from './components/show-new/show-new.component';
+import { FrameDialogComponent } from './components/frame-dialog/frame-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +47,12 @@ import {AdminModule} from './admin/admin.module';
     FloatingSideMenuComponent,
     PaginatePipe,
     FormInfoRentaComponent,
-    FormHablaConNosotrosComponent
+    FormHablaConNosotrosComponent,
+    SubstringPipe,
+    UbicacionComponent,
+    ShowShopComponent,
+    ShowNewComponent,
+    FrameDialogComponent
   ],
   imports: [
     BrowserModule,

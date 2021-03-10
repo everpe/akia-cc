@@ -3,6 +3,7 @@ import { HttpClient, HttpRequest,HttpHeaders,HttpResponse,HttpParams   } from '@
 import { Observable } from 'rxjs';
 import {Category} from '../models/category';
 import {Shop} from '../models/shop';
+import {New} from '../models/new';
 import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
@@ -26,16 +27,30 @@ export class CategoryService {
   }
 
 /**
- *  Busca una categoria y consulta las tiendas que tiene relacionadas
+ * Busca una categoria y consulta las tiendas que tiene relacionadas
  * @param id_category
  * @returns 
  */
-  public showShopsCategory(id_category:string): Observable<Shop[]>{
+  public showShopsByCategory(id_category:string): Observable<Shop[]>{
     return this.httpClient.get<Shop[]>(this.apiURL + id_category).pipe(
       map((shops: Shop[])=>{
+        // console.log(shops);
         return shops;
       })
     )
   }
 
+  /**
+ * Busca una categoria y consulta las noticias que tiene relacionadas
+ * @param id_category
+ * @returns 
+ */
+   public showNewsByCategory(id_category:string): Observable<New[]>{
+    return this.httpClient.get<New[]>(this.apiURL + id_category).pipe(
+      map((news: New[])=>{
+        // console.log(news);
+        return news;
+      })
+    )
+  }
 }

@@ -14,7 +14,9 @@
                         "galeria   galeria  galeria   galeria     galeria"
                         "descri     descri    descri    descri      descri"
                         "title-map title-map  title-map title-map   title-map"
-                        "text-map   text-map    mapa      mapa       mapa";
+                        "ubicacion  ubicacion  ubicacion  ubicacion ubicacion"
+                        /* "title-map title-map  title-map title-map   title-map"
+                        "text-map   text-map    mapa      mapa       mapa"; */
 }
 h3{
     color:var(--gris-oscuro);
@@ -276,31 +278,37 @@ h3{
     grid-area: title-map;
     padding: 2% 0;
 }
-.map{
+.ubicacion{
+    /* border: solid rgb(197, 161, 161); */
+    grid-area: ubicacion;
+    padding-bottom: 2%;
+} 
+/* .map{
     padding-bottom: 20px;
     grid-area: mapa;
     font-weight: 500;
-}
-.box-ubicacion{
+} */
+/* .box-ubicacion{
     padding-bottom: 20px;
     grid-area: text-map;
     text-align: center;
     padding-left:10% ;
     padding-right:10%;
-}
-.text-ubicacion{
+} */
+/* .text-ubicacion{
     color:white;
     height: 100%;
     padding: 2%;
     padding-left:6% ;
     padding-right:6%;
     background-color: var(--gris-oscuro);
-}
+} */
 .text-ubicacion p{
     padding: 5%;
 }
 agm-map {
     height: 100%;
+    border:solid 1px blue;
 }
 
 
@@ -326,7 +334,7 @@ agm-map {
         "descri     descri     "
         "title-map title-map   "
         "text-map   text-map   "
-        "mapa       mapa        ";
+        "ubicacion  ubicacion        ";
     }
     .title{
         padding: 5%;

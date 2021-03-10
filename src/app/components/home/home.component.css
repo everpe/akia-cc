@@ -202,7 +202,9 @@ app-carrousel{
     padding: 3%;
     grid-area: noticias;
     display: grid;
-    grid-gap: 12%;
+    grid-column-gap: 12%;
+    grid-row-gap: 2%;
+    /* grid-gap: 12%; */
     /* grid-template-columns: repeat(auto-fill,minmax(300px,auto)); */
     grid-template-columns: repeat(3,minmax(200px,1fr));
    
@@ -230,6 +232,7 @@ app-carrousel{
 .noticias .card-body{
     padding: 4%;
     padding-top: 5%;
+    height: 100%;
 }
 .card-body p{
     text-align: justify;

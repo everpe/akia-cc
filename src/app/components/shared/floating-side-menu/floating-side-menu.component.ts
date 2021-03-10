@@ -50,7 +50,7 @@ export class FloatingSideMenuComponent implements OnInit {
   }
 
   setShopsCategory(id){
-    this.categoryService.showShopsCategory(id).subscribe((response:any) =>
+    this.categoryService.showShopsByCategory(id).subscribe((response:any) =>
       {
         // this.shops=response.shops;
         this.propagar.emit(response.shops);
