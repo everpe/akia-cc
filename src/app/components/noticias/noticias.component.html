@@ -28,14 +28,14 @@
     <div  class="g-noticias">
             <div *ngFor="let item of news | paginate:page_size:page_number" class="noti">
                 <div class="card" >
-                    <img class="card-img-top" [src]="rutaImagesShops+item.image" alt="">
+                    <img class="card-img-top" [src]="rutaImagesNews+item.image" alt="">
                     <div class="card-body">
                         <h4>{{item.title}}</h4>  
                         <p class="card-text">  {{item.description | substring:0:110}}</p>
                     </div>
                     <div class="inferior-card">
                         <span>{{item.created_at| date}}</span>
-                        <a href="">Seguir Leyendo</a>
+                        <a [routerLink]="['/show/new']" [queryParams]="{id_new: item.id}">Seguir Leyendo</a>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
         [position]="positionCategoriasMenu" 
         [top]="topCategorias"
         [categories]="categories"
-        (propagar)="recibirShopsMenuMobile($event)" >
+        (propagar2)="recibirNewsMenuMobile($event)">
         </app-floating-menu>
         <!--     -->
     </div>

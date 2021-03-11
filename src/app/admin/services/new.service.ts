@@ -25,4 +25,17 @@ export class NewService {
       })
     )
   }
+
+/**
+ * Muestra Una noticia por su id
+ */
+  public showNew(id_new): Observable<New> {
+    // + `find/tipos/documentos`
+    return this.httpClient.get<New>(this.apiURL +`/`+ `${id_new}`).pipe(
+      map((noticia: New)=>{
+        return noticia;
+      })
+    )
+  }
+
 }

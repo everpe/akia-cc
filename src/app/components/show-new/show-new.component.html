@@ -1,1 +1,19 @@
-<p>show-new works!</p>
+<div class="container-new">
+    
+    <h1 class="">Noticias</h1>
+    
+    <h3 class="subtitulo"><i style="cursor:pointer;" [routerLink]="['/news']" class="fas fa-arrow-left"></i>
+        {{new.title}}
+    </h3>
+    <div class="date">
+        <span>{{new.created_at | date}}</span>
+        <span>{{new.category_id}}</span>
+    </div> 
+
+    <div class="image">
+        <img [src]="rutaImagesNews+new.image" alt="">
+    </div>
+    <p class="description">
+        {{new.description}}    
+    </p>
+</div>

@@ -1,26 +1,47 @@
 <div class="container-shop">
     <button class="boton" style="border:0;background-color: transparent;display: inline;" mat-button mat-dialog-close><i class="fas fa-times"></i></button>
-   <h2>NAme Tienda eknkde jass ggg</h2>
-   <hr>
-   <div class="datos">
-       <div class="ubicacion">
-           <span>Ubicación:</span>
-           <label for="">Planta baja 2</label>
-       </div>
-       <div class="horarios">
-        <span>Horarios:</span>
-        <label for="">8am - 12pm todos los días</label>
-       </div>
-       <div class="categoria">
-            <span>Categoria:</span>
-            <label for="">Entretenimiento</label>
-       </div>
-       <div class="telefonos"></div>
-   </div>
-   <div class="g-productos">
-       <p>dddd</p>
-       <p>ssss</p>
-       <p>hhffffff</p>
-       <p>wewewed mferj</p>
-   </div>
+    <div class="titulo">
+        <h2>{{shop.name|uppercase}}</h2>
+        <hr>
+    </div>
+    
+    <div class="datos">
+        <div class="ubicacion">
+            <span>Ubicación:
+                <label class="fondo" for="">{{shop.location}}</label>
+            </span>
+        </div>
+        <div class="horarios">
+            <span>Horarios:
+                <label class="fondo"for="">{{shop.attention_schedule}}</label>
+            </span>    
+        </div>
+        <div class="categoria">
+            <span>Categoria:
+                <label class="fondo"for="">{{shop.category_id}}</label>
+            </span>
+        </div>
+        <!-- <div class="telefonos"> -->
+            <span *ngIf="shop.cellphone_one!=null && shop.cellphone_one!=undefined">
+                Telefono 1:
+                <label class="fondo" for="">{{shop.cellphone_one}}</label>
+            </span>
+            
+            <span *ngIf="shop.cellphone_two!=null && shop.cellphone_two!=undefined">
+                Telefono 2:
+                <label class="fondo"for="">{{shop.cellphone_two}}</label>
+            </span>
+            <span *ngIf="shop.web_site!=null">
+                Sitio Web:
+                <label class="fondo"for="">{{shop.web_site}}</label>
+            </span>
+        <!-- </div> -->
+    </div>
+    <h5 class="titulo2">Productos que puedes conseguir</h5>
+    <div class="g-productos">
+        <div *ngFor="let prod of products">
+            <img  class="image" [src]="rutaImagesProducts+prod.image" alt="">
+        </div>
+        
+    </div>
 </div>

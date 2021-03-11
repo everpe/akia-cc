@@ -1,6 +1,7 @@
 import { Component, Input, OnInit,Output,EventEmitter } from '@angular/core';
 import {Category} from '../../../admin/models/category';
 import {Shop} from '../../../admin/models/shop';
+import {New} from '../../../admin/models/new';
 import {CategoryService} from '../../../admin/services/category.service';
 @Component({
   selector: 'app-floating-menu',
@@ -26,6 +27,7 @@ export class FloatingSideMenuComponent implements OnInit {
   @Input() top:string='300px';
 
   @Output()propagar = new EventEmitter<Shop[]>();
+  @Output()propagar2 = new EventEmitter<New[]>();
 
   constructor(private categoryService:CategoryService) { 
     this.title="Categorias";
@@ -49,17 +51,21 @@ export class FloatingSideMenuComponent implements OnInit {
     return "red";
   }
 
-  setShopsCategory(id){
+  setEntitiesCategory(id){
     this.categoryService.showShopsByCategory(id).subscribe((response:any) =>
       {
-        // this.shops=response.shops;
         this.propagar.emit(response.shops);
-        // console.log(response);
       },error=>{
-        // console.log(error);
+        console.log(error);
       }
     );
-    console.log('envia');
+    // console.log('envia');
+    this.categoryService.showNewsByCategory(id).subscribe((response:any) =>
+    {
+      this.propagar2.emit(response.news);
+    },error=>{
+      console.log(error);
+    });
   }
 
 }

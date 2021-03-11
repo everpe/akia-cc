@@ -125,6 +125,7 @@ app-carrousel{
       font-weight: var(--negrita);
       text-decoration: none;
       color: var(--color-verde);
+      cursor: pointer;
   }
 /* END HOVER */
 

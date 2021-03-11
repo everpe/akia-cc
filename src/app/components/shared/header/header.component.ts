@@ -23,9 +23,9 @@ export class HeaderComponent implements OnInit {
       // data:{tipo:this.nombreTipoDoc ,radicado:this.pqrsd.numero_radicado,
       // codigo_qr:this.pqrsd.codigo_qr}
     });
-    dialogRef.afterClosed().subscribe(
-      result => {window.location.reload();}
-    );
+    // dialogRef.afterClosed().subscribe(
+    //   result => {window.location.reload();}
+    // );
     dialogRef.disableClose = true;
 
   }

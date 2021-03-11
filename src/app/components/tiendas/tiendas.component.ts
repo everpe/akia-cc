@@ -6,6 +6,8 @@ import {CategoryService} from '../../admin/services/category.service';
 import {ShopService} from '../../admin/services/shop.service';
 import {Category} from '../../admin/models/category';
 import {Shop} from '../../admin/models/shop';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {ShowShopComponent} from '../show-shop/show-shop.component';
 @Component({
   selector: 'app-tiendas',
   templateUrl: './tiendas.component.html',
@@ -95,7 +97,8 @@ export class TiendasComponent implements OnInit {
   constructor(private pageScrollService: PageScrollService,
                      @Inject(DOCUMENT) private document: any, 
                       private categoryService:CategoryService,
-                      private shopService:ShopService) {
+                      private shopService:ShopService,
+                      private dialog: MatDialog) {
     this.setShops();    
     this.setCategories();           
   }
@@ -152,7 +155,7 @@ export class TiendasComponent implements OnInit {
     this.shopService.listAllShops().subscribe((response:any) =>
       {
         this.shops=response.shops;
-        console.log(response);
+        // console.log(response);
       },error=>{
         console.log(error);
       }
@@ -167,15 +170,35 @@ export class TiendasComponent implements OnInit {
     this.categoryService.showShopsByCategory(id).subscribe((response:any) =>
       {
         this.shops=response.shops;
-        console.log(response);
+        // console.log(response);
       },error=>{
         console.log(error);
       }
     );
   }
 
+  /**
+   * Recibe las tiendas del floating-menu-side
+   * @param shopss 
+   */
   recibirShopsMenuMobile(shopss :Shop []){
-    console.log('recibe');
+    // console.log('recibe');
     this.shops=shopss;
+  }
+
+
+  /**
+   * 
+   * @param id_shop Abre dialogo con una tienda en especifico
+   */
+  showShop(id_shop){
+    const dialogRef = this.dialog.open(ShowShopComponent,{
+      width: '80%',
+      data:{id_shop:id_shop }
+    });
+    // dialogRef.afterClosed().subscribe(
+    //   result => {window.location.reload();}
+    // );
+    dialogRef.disableClose = true;
   }
 }

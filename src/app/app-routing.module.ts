@@ -7,8 +7,8 @@ import  {NoticiasComponent }  from './components/noticias/noticias.component';
 import  {ContactoComponent }  from './components/contacto/contacto.component';
 import  {FamiliaAkiaComponent }  from './components/familia-akia/familia-akia.component';
 import  {ConocenosComponent }  from './components/conocenos/conocenos.component';
-import { LoginComponent } from './auth/login/login.component';
-import { CreateNoticeComponent } from './components/create-notice/create-notice.component';
+// import { LoginComponent } from './auth/login/login.component';
+import { ShowNewComponent } from './components/show-new/show-new.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -19,8 +19,8 @@ const routes: Routes = [
   {path: 'contact', component: ContactoComponent},
   {path: 'family-akia', component: FamiliaAkiaComponent},
   {path: 'knows', component: ConocenosComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'news/create', component: CreateNoticeComponent},
+  // {path: 'login', component: LoginComponent},
+  {path: 'show/new', component: ShowNewComponent},
   
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];

@@ -31,7 +31,7 @@ import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { ShowShopComponent } from './components/show-shop/show-shop.component';
 import { ShowNewComponent } from './components/show-new/show-new.component';
 import { FrameDialogComponent } from './components/frame-dialog/frame-dialog.component';
-import { LoginComponent } from './auth/login/login.component';
+// import { LoginComponent } from './auth/login/login.component';
 
 
 import { FormsModule } from '@angular/forms';
@@ -60,7 +60,7 @@ import { CreateNoticeComponent } from './components/create-notice/create-notice.
     ShowNewComponent,
     FrameDialogComponent,
     // FormsModule,
-    LoginComponent,
+    // LoginComponent,
     CreateNoticeComponent
   ],
   imports: [

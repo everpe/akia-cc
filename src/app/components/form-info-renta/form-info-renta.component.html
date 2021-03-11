@@ -1,20 +1,54 @@
-<form class="form">
+<!-- <form class="form" action="https://formspree.io/f/xwkwgbyo" method="POST">
     <div class="form-group">
         <label for="exampleInputEmail1">Nombre</label>
-        <input type="text" class="form-control" placeholder="Nombre">
+        <input  type="text" name="name" class="form-control" id="name" placeholder="Nombre">
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Correo electrónico</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      <input  type="email" name="_replyto" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Confirmación de correo electrónico</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
     <div class="caja-boton">
-        <button class="btn btn-enviar">Enviar Solicitud</button>
+        <button type="submit" class="btn btn-enviar">Enviar Solicitud</button>
     </div>
-    
-</form> 
+</form>  -->
+
+<form id="contact" action="https://formspree.io/f/xwkwwzra" method="POST">
+    <div class="row">
+      <div class="col-md-6">
+        <fieldset>
+          <input name="name" type="text" class="form-control" id="name"  placeholder="Your name..."
+            required=""
+          />
+        </fieldset>
+      </div>
+      <div class="col-md-6">
+        <fieldset>
+          <input name="_replyto" type="email"  class="form-control" id="email"  placeholder="Your email..."
+            required=""
+          />
+        </fieldset>
+      </div>
+      <div class="col-md-12">
+        <fieldset>
+          <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject..."
+            required=""/>
+        </fieldset>
+      </div>
+      <div class="col-md-12">
+        <fieldset>
+          <textarea name="message" rows="6" class="form-control" id="message" required=""></textarea>
+        </fieldset>
+      </div>
+      <div class="col-md-12">
+        <fieldset>
+          <button type="submit" id="form-submit" class="button">
+            Send Message
+          </button>
+        </fieldset>
+      </div>
+    </div>
+  </form>

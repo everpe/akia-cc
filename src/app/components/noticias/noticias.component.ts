@@ -25,7 +25,7 @@ export class NoticiasComponent implements OnInit {
   // Categorias
   categories:Category[]; 
   news:New[]=[];
-  public rutaImagesShops:string='http://localhost:8000/news/';
+  public rutaImagesNews:string='http://localhost:8000/news/';
   //  news:any=[ 
     
   //    {
@@ -122,11 +122,11 @@ export class NoticiasComponent implements OnInit {
 
   /**
    * Para selecciona categoria desde modo mobile y devuelve las noticias que le pertenecen.
-   * @param shopss 
+   * @param news 
    */
-  recibirShopsMenuMobile(news :New []){
+  recibirNewsMenuMobile(news :New []){
     console.log('recibe');
-    // this.news=news;
+    this.news=news;
   }
 
 /**
