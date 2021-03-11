@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "akia-cc"
+  "defaultProject": "akia-cc",
+  "cli": {
+    "analytics": false
+  }
 }

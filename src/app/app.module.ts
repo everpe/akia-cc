@@ -31,9 +31,14 @@ import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { ShowShopComponent } from './components/show-shop/show-shop.component';
 import { ShowNewComponent } from './components/show-new/show-new.component';
 import { FrameDialogComponent } from './components/frame-dialog/frame-dialog.component';
+import { LoginComponent } from './auth/login/login.component';
+
+
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,    
     FooterComponent,
     HeaderComponent,
     HomeComponent,
@@ -52,9 +57,12 @@ import { FrameDialogComponent } from './components/frame-dialog/frame-dialog.com
     UbicacionComponent,
     ShowShopComponent,
     ShowNewComponent,
-    FrameDialogComponent
+    FrameDialogComponent,
+    // FormsModule,
+    LoginComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
