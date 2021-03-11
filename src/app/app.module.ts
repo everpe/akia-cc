@@ -35,6 +35,7 @@ import { LoginComponent } from './auth/login/login.component';
 
 
 import { FormsModule } from '@angular/forms';
+import { CreateNoticeComponent } from './components/create-notice/create-notice.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { FormsModule } from '@angular/forms';
     ShowNewComponent,
     FrameDialogComponent,
     // FormsModule,
-    LoginComponent
+    LoginComponent,
+    CreateNoticeComponent
   ],
   imports: [
     FormsModule,
