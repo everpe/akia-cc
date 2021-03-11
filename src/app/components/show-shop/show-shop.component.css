@@ -1,0 +1,18 @@
+
+::ng-deep.mat-dialog-container {
+    background-color: #DFDECA;
+    position: relative;
+}
+.boton{
+    position:absolute;
+    top: 0px;
+    right: 2px;
+    font-size: 25px;
+    color: var(--gris-oscuro);
+}
+
+@media screen and (max-width: 768px) {
+    .container-shop h2{
+        padding-top: 5%;
+    }
+}

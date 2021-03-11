@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
    */
   openUbication(){
     const dialogRef = this.dialog.open(FrameDialogComponent,{
-      width: '60%',
+      width: 'auto',
       panelClass: 'custom-modal'
       // data:{tipo:this.nombreTipoDoc ,radicado:this.pqrsd.numero_radicado,
       // codigo_qr:this.pqrsd.codigo_qr}

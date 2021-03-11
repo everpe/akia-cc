@@ -31,6 +31,9 @@ nav .logo {
 .txt-header{
 	font-size: 0.9em;
 	margin-bottom: 1%;
+	text-decoration: none;
+	color: var(--color-verde);
+	cursor: pointer;
 }
 nav .links {
 	float: right;
