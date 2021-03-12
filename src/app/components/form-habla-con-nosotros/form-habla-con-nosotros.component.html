@@ -1,30 +1,40 @@
-<form class="form">
+<form (ngSubmit)="sendEmail(hablaForm)" class="form" #hablaForm="ngForm">
     <div class="form-group">
         <label for="exampleInputEmail1">Nombre</label>
-        <input type="text" class="form-control" placeholder="Nombre">
+        <input type="text" class="form-control" name="name" placeholder="Nombre" ngModel required #name="ngModel">
     </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">Telefono</label>
-      <input type="number" class="form-control" id="exampleInputEmail1" >
-      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      <label for="cellphone">Telefono</label>
+      <input type="number" class="form-control" name="cellphone" id="exampleInputEmail1" ngModel #cellphone="ngModel">
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Correo electrónico</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <label for="email">Correo electrónico</label>
+        <input type="email"  class="form-control"  placeholder="correo electrónico" email name="email" ngModel required #email="ngModel">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
     <div class="form-group">
         <label for="exampleFormControlSelect1">Example select</label>
-        <select class="form-control" id="exampleFormControlSelect1" >
-            <option value="" >-Motivo de contacto-</option>
-            <option value="">Renta de locales comerciales</option>
-            <option value="">Renta de espacios publicitarios</option>
-            <option value="">Comentarios</option>
-            <option value="">Quejas</option>
+        <select class="form-control" id="exampleFormControlSelect1" 
+            (change)='setSendCorreo($event)'>
+            <option value="0" >-Motivo de contacto-</option>
+            <option value="2">Renta de locales comerciales</option>
+            <option value="2">Renta de espacios publicitarios</option>
+            <option value="1">Comentarios</option>
+            <option value="1">Quejas</option>
         </select>
     </div>
-    <div class="caja-boton">
-        <button class="btn btn-enviar">Enviar Solicitud</button>
+
+    <div *ngIf="sendCorreo" class="caja-boton">
+        <div>
+            <textarea style="display: block;" class="form-control" placeholder="Mensaje" name="message" 
+                ngModel required #message="ngModel"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-enviar">Enviar Solicitud</button>
+    </div>
+
+    <div *ngIf="!sendCorreo" class="caja-boton">
+        <button (click)="expression" class="btn btn-enviar">Enviar Solicitud</button>
     </div>
     
 </form> 

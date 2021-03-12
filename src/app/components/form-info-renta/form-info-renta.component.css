@@ -10,3 +10,7 @@ background-color: var(--color-verde);
 color: white;
 margin: auto;
 }
+
+.rojo{
+  color:red;
+}
