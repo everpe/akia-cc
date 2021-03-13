@@ -36,6 +36,8 @@ import { FrameDialogComponent } from './components/frame-dialog/frame-dialog.com
 
 import { FormsModule } from '@angular/forms';
 import { CreateNoticeComponent } from './components/create-notice/create-notice.component';
+import { RentarComponent } from './components/rentar/rentar.component';
+import { ChooseComponent } from './components/choose/choose.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { CreateNoticeComponent } from './components/create-notice/create-notice.
     FrameDialogComponent,
     // FormsModule,
     // LoginComponent,
-    CreateNoticeComponent
+    CreateNoticeComponent,
+    RentarComponent,
+    ChooseComponent
   ],
   imports: [
     FormsModule,

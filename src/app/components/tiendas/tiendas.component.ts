@@ -26,66 +26,7 @@ export class TiendasComponent implements OnInit {
 
   categories:Category[]; 
   shops:Shop[]=[];
-  // shops:any=[ 
-   
-  //   {
-  //     "img":"../../../assets/tiendaZara.png",
-  //     "name":"Zara 1"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaJuanV.png",
-  //     "name":"Tienda Juan 1"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaZara.png",
-  //     "name":"Zara 1"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaZara.png",
-  //     "name":"Arturo Calle 3"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaJuanV.png",
-  //     "name":"Tienda Juan 4"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaZara.png",
-  //     "name":"Tienda Juan 5"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaJuanV.png",
-  //     "name":"Tienda Juan 6"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaZara.png",
-  //     "name":"Tienda Juan 7"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaJuanV.png",
-  //     "name":"Tienda Juan 8"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaZara.png",
-  //     "name":"Tienda Zara 9"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaJuanV.png",
-  //     "name":"Tienda Juan V 10"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaZara.png",
-  //     "name":"Tienda Zara"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaJuanV.png",
-  //     "name":"Tienda Juan V"
-  //   },
-  //   {
-  //     "img":"../../../assets/tiendaZara.png",
-  //     "name":"Tienda Zara"
-  //   }
-
-  // ]
+  
   // scroll
   activeSection = 1;
   // Propiedades del Menu lateral categorias

@@ -1,0 +1,31 @@
+.contenedor{
+    display: block;
+    padding: 1% 26%;
+    background-color: #F7F8E2;
+    
+}
+.form{
+    border: solid 1px var(--gris-oscuro);
+    padding:2% 7%;
+}
+.rojo{
+    color: red;
+}
+.box{
+    justify-content: center;
+    text-align: center;
+}
+.btn-enviar{
+    background-color: var(--color-verde);
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor{
+        padding: 2%;
+    }
+    .form{
+        padding: 4%;
+    }
+}

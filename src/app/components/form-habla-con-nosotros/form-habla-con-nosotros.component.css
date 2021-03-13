@@ -2,8 +2,18 @@
     display: flex;
     justify-content: center;
     }
-    .btn-enviar{
+.btn-enviar,.btn-enviar2{
     background-color: var(--color-verde);
     color: white;
     margin: auto;
-    }
+    width: 30%;
+}
+.rojo{
+    color:red
+}
+/* .btn-enviar2{
+        width: 100%;
+}
+.rojo{
+    color: red;
+} */

@@ -1,0 +1,64 @@
+<div class="contenedor">
+    
+    <form (ngSubmit)="createRent(rentForm)" class="form" #rentForm="ngForm">
+        <h2>Formulario de Renta</h2>
+        <span style="text-align: center;"><b>"{{tipoRenta}}"</b> </span>
+        <br><br>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nombre</label>
+            <input type="text" class="form-control" name="name" ngModel required #name="ngModel"  [(ngModel)]="renta.name">
+            <div *ngIf="(name.invalid && name.touched)">
+                <span class="rojo">Nombre requerido</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cellphone">Teléfono</label>
+            <input type="number" class="form-control" name="cellphone" id="exampleInputEmail1" ngModel 
+            #cellphone="ngModel"[(ngModel)]="renta.cellphone" required>
+            <div *ngIf="(cellphone.invalid && cellphone.touched)">
+                <span class="rojo">Campo requerido</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email"  class="form-control"  email name="email" ngModel 
+            required #email="ngModel" [(ngModel)]="renta.email">
+            <div *ngIf="(email.invalid && email.touched)">
+                <span class="rojo">Correo Inválido</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cellphone">Número de giro comercial</label>
+            <input type="number" class="form-control"  name="n_giro" id="exampleInputEmail1" 
+            ngModel #n_giro="ngModel" [(ngModel)]="renta.turn_number">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nombre de la franquicia</label>
+            <input type="text" class="form-control" name="franquicia"  ngModel required
+             #franquicia="ngModel" [(ngModel)]="renta.franchise_number">
+            <div *ngIf="(franquicia.invalid && franquicia.touched)">
+                <span class="rojo">Franquicia requerida</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cellphone">Metros cuadrados Requeridos</label>
+            <input type="number" class="form-control"  name="m_cuadrados" id="exampleInputEmail1" required ngModel
+                #m_cuadrados="ngModel" [(ngModel)]="renta.square_meters_required">
+            <div *ngIf="(m_cuadrados.invalid && m_cuadrados.touched)">
+                <span class="rojo">Ingrese los metros cuadrados apróximadamente</span>
+            </div>
+        </div>
+
+        <div class="form-group box">
+            <button [disabled]="(rentForm.invalid)" type="submit" class="btn btn-enviar">Enviar</button>
+        </div>
+        
+
+        
+    </form> 
+</div>
+
+
