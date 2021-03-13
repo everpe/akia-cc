@@ -24,7 +24,7 @@
 }
 
 .facebook {
-    background-color: #3b5998;
+    background-color: #cecfcf;
     color: #fff;
     font-size: 18px;
     padding-top: 5px;
@@ -124,20 +124,20 @@ a {
 }
 
 .btn-blue {
-    background-color: #1A237E;
+    background-color: var(--color-verde);
     width: 150px;
     color: #fff;
     border-radius: 2px
 }
 
 .btn-blue:hover {
-    background-color: #000;
+    background-color: rgb(143, 207, 149);
     cursor: pointer
 }
 
 .bg-blue {
     color: #fff;
-    background-color: #1A237E
+    background-color: var(--color-verde);
 }
 
 @media screen and (max-width: 991px) {

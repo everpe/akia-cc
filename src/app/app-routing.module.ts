@@ -23,8 +23,12 @@ const routes: Routes = [
   // {path: 'login', component: LoginComponent},
   {path: 'show/new', component: ShowNewComponent},
   {path: 'rentar', component: RentarComponent},
+  {
+    path:'admin',
+    loadChildren:()=> import('./admin/admin.module').then(m=>m.AdminModule)
+  },
+  {path: '**', redirectTo: '', pathMatch: 'full'},
   
-  {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
 // {useHash:true} para el problema de cuando se recarga en ruta en produccion

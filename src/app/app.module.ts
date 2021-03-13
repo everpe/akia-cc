@@ -75,8 +75,6 @@ import { ChooseComponent } from './components/choose/choose.component';
     NgxPageScrollCoreModule.forRoot({ duration: 1600 }),
     MaterialModule,
     AdminModule
-
-
   ],
   bootstrap: [AppComponent]
 })

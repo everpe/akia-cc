@@ -1,0 +1,23 @@
+.container-dash{
+    /* display: flex; */
+    padding:2% 5%;
+    text-align: center;
+    
+}
+.contenedor2{
+    display: flex;
+    
+}
+.categorias,.tiendas,.noticias,.productos,.otras{
+    width: 200px;
+    padding: 2% 3%;
+    margin: auto;
+    cursor: pointer;
+}
+.categorias img,.tiendas img,.noticias img,.productos img,.otras img{
+    max-width: 100%;
+}
+.categorias:hover,.tiendas:hover,.noticias:hover,.productos:hover,.otras:hover{
+    filter: opacity(0.9);
+    transform: scale(1.04);
+}
