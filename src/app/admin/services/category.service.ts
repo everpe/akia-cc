@@ -53,4 +53,38 @@ export class CategoryService {
       })
     )
   }
+
+
+  /**
+   * Manda Crear la entidad categoria
+   * solo recibe el nombre ya q es el unico campo
+   */
+  createCategory(name:string): Observable<Category>{
+    const headers = this.getCredentials();
+    return this.httpClient.post<Category>(this.apiURL,{name:name},{ 'headers': headers }); 
+  }
+
+  /**
+   * Actualizar categoria
+   * @param id 
+   */
+  update(id,name){
+    const headers = this.getCredentials();
+    return this.httpClient.put<Category>(this.apiURL + `${id}`,{name:name},{ 'headers': headers }); 
+  }
+
+  delete(id,name){
+    const headers = this.getCredentials();
+    return this.httpClient.delete<Category>(this.apiURL + `${id}`,{ 'headers': headers }); 
+  }
+
+
+
+  /**
+   * Crea Headers y params necesarios en las requests
+   */
+  getCredentials():HttpHeaders{
+    let token=localStorage.getItem('token-akia');
+    return  new HttpHeaders({ 'Content-Type': 'application/json','Authorization': `Bearer ${token}` });
+  }
 }

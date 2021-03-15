@@ -1,1 +1,53 @@
-<p>create-shop works!</p>
+<form (ngSubmit)="createShop()" #createForm="ngForm">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nombre</label>
+        <input type="text" name="name" class="form-control" ngModel required 
+        #name="ngModel" [(ngModel)]="shop.name" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Sitio Web</label>
+        <input type="text" name="title" class="form-control" ngModel required 
+        #web_site="ngModel" [(ngModel)]="shop.web_site" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Telefono</label>
+        <input type="text" name="cellphone_one" class="form-control" ngModel required 
+        #cellphone_one="ngModel" [(ngModel)]="shop.cellphone_one" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Ubicación</label>
+        <input type="text" name="location" class="form-control" ngModel required 
+        #location="ngModel" [(ngModel)]="shop.location" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Horario de Atención</label>
+        <input type="text" name="title" class="form-control" ngModel required 
+        #attention_schedule="ngModel" [(ngModel)]="shop.attention_schedule" >
+    </div>
+   
+
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Imagen en formato Png (Tamaño recomendado 180pixeles X 180pixeles)</label>
+        <input type="file"  
+          id="avatar" name="image" (change)="selectFile($event)"
+          accept="image/png, image/PNG,image/svg"   #image='ngModel'[(ngModel)]="shop.image" required>
+          <!-- -->
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect2">Categorias<b class="deco" >*</b></label>
+        <select class="form-control"  id="exampleFormControlSelect2" 
+           (change)="setCategory($event)" name="category"   required > 
+           <option value="-" class="place">- Categoria -</option>
+           <option [value]="tipo.id" *ngFor="let tipo of categories">
+              {{tipo.name}} 
+           </option>
+        </select>
+     </div>
+  
+    <div class="caja-boton">
+        <button [disabled]="(createForm.invalid)||categoryId==0" type="submit" class="btn btn-success" mat-button mat-dialog-close>Crear Noticia</button>
+    </div>
+</form>
+

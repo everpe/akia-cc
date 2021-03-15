@@ -18,6 +18,7 @@ import { UpdateProductComponent } from './components/products/update-product/upd
 import { TableShopsComponent } from './components/shops/table-shops/table-shops.component';
 import { CreateShopComponent } from './components/shops/create-shop/create-shop.component';
 import { UpdateShopComponent } from './components/shops/update-shop/update-shop.component';
+import { RentsComponent } from './components/rents/rents.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UpdateShopComponent } from './components/shops/update-shop/update-shop.
     UpdateProductComponent,
     TableShopsComponent,
     CreateShopComponent,
-    UpdateShopComponent
+    UpdateShopComponent,
+    RentsComponent
   ],
   imports: [
     CommonModule,

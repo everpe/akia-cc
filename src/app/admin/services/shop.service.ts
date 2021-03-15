@@ -52,5 +52,35 @@ export class ShopService {
     )
   }
 
+      /**
+   * Manda Crear la entidad Noticia
+   * solo recibe el nombre ya q es el unico campo
+   */
+       public createShop(shop:Shop,file:File): Observable<Shop>{
+        // 'Content-Type': 'multipart/form-data',
+        const headers=this.getCredentials();
+        const data: FormData = new FormData();
+        data.append('name', shop.name);
+        data.append('web_site',shop.web_site);
+        data.append('cellphone_one', shop.cellphone_one);
+        data.append('location', shop.location);
+        data.append('attention_schedule', shop.attention_schedule);
+        data.append('category_id', shop.category_id);
+        data.append('image', file);
+
+        return this.httpClient.post<Shop>(this.apiURL,data,{ 'headers': headers }); 
+      }
   
+      public deleteNew(id): Observable<any>{
+        const headers=this.getCredentials();
+        return this.httpClient.delete<any>(this.apiURL+`/`+ `${id}`,{ 'headers': headers }); 
+      }
+    /**
+   * Crea Headers y params necesarios en las requests
+   */
+     getCredentials():HttpHeaders{
+      let token=localStorage.getItem('token-akia');
+      return  new HttpHeaders({ 'Accept': 'application/json','Authorization': `Bearer ${token}` });
+    }
+    
 }

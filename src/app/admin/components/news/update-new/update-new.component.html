@@ -1,1 +1,24 @@
-<p>update-new works!</p>
+<form (ngSubmit)="updateNew(updateForm)" #updateForm="ngForm">
+    <div class="form-group">
+        <label for="exampleInputEmail1">{{not.title}}</label>
+        <input type="text" class="form-control" 
+        #title="ngModel" [(ngModel)]="not.title"  name="title"  required >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Descripción</label>
+        <textarea class="form-control" name="descripcion_asunto" id="area" cols="auto" rows="5" 
+         #description='ngModel'[(ngModel)]="not.description" required>
+      </textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Imagen en formato Png (Tamaño recomendado 330px X 250px)</label>
+        <input type="file"  
+          id="avatar" name="image" (change)="selectFile($event)"
+          accept="image/png, image/PNG,image/svg" >
+          <!-- -->
+    </div>
+ 
+    <div class="caja-boton">
+        <button [disabled]="(updateForm.invalid)" type="submit" class="btn btn-success" mat-button mat-dialog-close>Actualizar Noticia</button>
+    </div>
+</form>

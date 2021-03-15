@@ -7,7 +7,7 @@ export interface Shop {
     cellphone_two?:string;
     location?:string;
     attention_schedule?:string;
-    image:string;
+    image:any;
     category_id:string;
     
     // constructor(id:string,name:string, web_site:string,cellphone_one:string,

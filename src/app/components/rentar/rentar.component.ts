@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RentService} from '../../admin/services/rent.service';
 import { ActivatedRoute } from '@angular/router';
-import {Rent} from '../../admin/models/Rent';
+import {Rent} from '../../admin/models/rent';
 
 @Component({
   selector: 'app-rentar',

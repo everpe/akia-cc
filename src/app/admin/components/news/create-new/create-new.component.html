@@ -1,1 +1,38 @@
-<p>create-new works!</p>
+<form (ngSubmit)="createNew(createForm)" #createForm="ngForm">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Titulo</label>
+        <input type="text" placeholder="titulo" name="title" class="form-control" ngModel required 
+        #title="ngModel" [(ngModel)]="new.title" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Descripción</label>
+        <textarea class="form-control" name="descripcion_asunto" id="area" cols="auto" rows="5" 
+         #description='ngModel'[(ngModel)]="new.description" required>
+      </textarea>
+        <div *ngIf="(description.invalid && description.touched)">
+            <span class="rojo">Descripción de la noticia requerida</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Imagen en formato Png (Tamaño recomendado 330pixeles X 250pixeles)</label>
+        <input type="file"  
+          id="avatar" name="image" (change)="selectFile($event)"
+          accept="image/png, image/PNG,image/svg"   #image='ngModel'[(ngModel)]="new.image" required>
+          <!-- -->
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect2">Categorias<b class="deco" >*</b></label>
+        <select class="form-control"  id="exampleFormControlSelect2" 
+           (change)="setCategory($event)" name="category"   required > 
+           <option value="-" class="place">- Categoria -</option>
+           <option [value]="tipo.id" *ngFor="let tipo of categories">
+              {{tipo.name}} 
+           </option>
+        </select>
+     </div>
+  
+    <div class="caja-boton">
+        <button [disabled]="(createForm.invalid)||categoryId==0" type="submit" class="btn btn-success" mat-button mat-dialog-close>Crear Noticia</button>
+    </div>
+</form>

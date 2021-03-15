@@ -21,7 +21,7 @@ export class AuthService
   public login(data: UserLogin){
     return this.http.post(uri, data).subscribe((response: Login) => 
     {
-      localStorage.setItem('token', response.access_token);
+      localStorage.setItem('token-akia', response.access_token);
       this.router.navigate(['/admin/dashboard']);
     },error=>{
       console.log(error);

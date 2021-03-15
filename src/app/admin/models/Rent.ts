@@ -7,6 +7,6 @@ export interface Rent {
     franchise_number?:string;//Nombre de la franquicia error de nombre
     square_meters_required?:string;
     type?:string;
-    state?:boolean;
+    state?:any;
     created_at?:any;
 }

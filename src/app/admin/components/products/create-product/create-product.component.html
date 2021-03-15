@@ -1,1 +1,21 @@
-<p>create-product works!</p>
+<form (ngSubmit)="createProduct()" #createForm="ngForm">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Titulo</label>
+        <input type="text" placeholder="titulo" name="title" class="form-control" ngModel required 
+        #title="ngModel" [(ngModel)]="product.name" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Imagen en formato Png (Tamaño recomendado 330pixeles X 250pixeles)</label>
+        <input type="file"  
+          id="avatar" name="image" (change)="selectFile($event)"
+          accept="image/png, image/PNG,image/svg"   #image='ngModel'[(ngModel)]="product.image" required>
+          <!-- -->
+    </div>
+
+ 
+  
+    <div class="caja-boton">
+        <button [disabled]="(createForm.invalid)" type="submit" class="btn btn-success" mat-button mat-dialog-close>Crear Producto</button>
+    </div>
+</form>
+

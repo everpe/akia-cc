@@ -6,6 +6,7 @@ import {TableCategoriesComponent} from  './components/categories/table-categorie
 import {TableNewsComponent} from  './components/news/table-news/table-news.component';
 import {TableShopsComponent} from  './components/shops/table-shops/table-shops.component';
 import {TableProductsComponent} from  './components/products/table-products/table-products.component';
+import {RentsComponent} from  './components/rents/rents.component';
 
 const routes: Routes = [
  
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path:'news',component: TableNewsComponent},
       { path:'shops',component: TableShopsComponent},
       { path:'products',component: TableProductsComponent},
+      { path:'rents',component: RentsComponent},
       { path: '**',   redirectTo: 'login'}
     ]
     

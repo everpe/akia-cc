@@ -94,7 +94,7 @@ export class TableCategoriesComponent implements OnInit {
   
   public categories:Category[]=[];
   //Columnas de la Tabla
-  displayedColumns: string[] = ['nombre', 'creacion', 'actualizacion', 'acciones','nuevo'];
+  displayedColumns: string[] = ['nombre', 'creacion', 'actualizacion', 'acciones'];
   //Información  de La Tabla
   dataSource = new MatTableDataSource();
   // dataSource:Category[];
@@ -106,6 +106,9 @@ export class TableCategoriesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  /**
+   * Lista todas las categorias
+   */
   getAllCategories(){
     this.categoryService.listAllCategories().subscribe((response:any) =>
     {
@@ -115,6 +118,61 @@ export class TableCategoriesComponent implements OnInit {
       console.log(error);
     }
     );
+  }
+
+
+  /**
+   * Manda a crear una nueva categoria.
+   */
+  createCategory(){
+    let confi= confirm('¿Crear una nueva Categoria?');
+    
+    if(confi){
+      let name = prompt('Nombre de la Nueva Categoria');
+      this.categoryService.createCategory(name).subscribe(
+        response=>{
+          alert('Categoria Creada con éxito');
+          this.getAllCategories();
+        },error=>{
+          console.log(error)
+        }
+      );
+    }
+  }
+
+/**
+ * 
+ * @param id Actualiza la categoria
+ * @param name 
+ */
+  updateCategory(id,name){
+    let confi= confirm('¿Actualizar categoria '+name+'?');
+    if(confi){
+      let name = prompt('Nuevo Nombre de Categoria');
+      this.categoryService.update(id,name).subscribe(
+        response=>{
+          alert('Actualizado Correcamente')
+          this.getAllCategories();
+        },error=>{
+          console.log(error);
+        }
+      );
+    }
+  }
+
+  deleteCategoty(id,name){
+    let confi= confirm('¿Desea eliminar categoria '+name+'?'+'\n'+
+                        'Si elimina la categoria se eliminaran las tiendas,'+ 
+                        'noticias y productos relacionados.');
+    if(confi){
+      this.categoryService.delete(id,name).subscribe(
+        respone=>{
+          this.getAllCategories();    
+        },error=>{
+          console.log(error);
+        }
+      );
+    }                    
   }
 
 }
