@@ -1,6 +1,6 @@
 <div class="container-dash">
     <h2>Configuración Administrador Akia</h2>
-    <div class="contenedor2">
+    <div *ngIf="logueado" class="contenedor2">
         <div class="categorias">Categorias
             <a [routerLink]="['/admin/categories']">
                 <img src="../../../../assets/admin/categorias.svg" alt="">
@@ -22,8 +22,15 @@
             </a>   
         </div>
         <div class="otras">Otras configuraciones
-            <img src="../../../../assets/admin/settings.svg" alt="">
+            <a [routerLink]="['/admin/config']">
+                <img src="../../../../assets/admin/settings.svg" alt="">
+            </a>
         </div>
+    </div>
+
+    <div *ngIf="!logueado" >
+        <h6>Debe iniciar Sesión como administrador</h6>
+        <a [routerLink]="['/admin/login']">Por Favor Inicie Secion Obtener permisos de Administrador</a>
     </div>
 
 </div>

@@ -30,7 +30,8 @@ export class AuthService
   
   logout()
   {
-    localStorage.clear();
+    localStorage.removeItem('token-akia');
+    // localStorage.clear();
     this.router.navigate(['/login']);
   }
 

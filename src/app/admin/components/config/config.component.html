@@ -1,0 +1,77 @@
+<div class="contenedor">
+    <h3>
+        <i style="cursor:pointer;" [routerLink]="['/admin/dashboard']" class="fas fa-arrow-left"></i>
+        Configuración General
+    </h3> 
+    <div class="crear">
+        <h6>Nueva </h6>
+        <form (ngSubmit)="createBanner()" #createForm="ngForm">
+            <div class="form-group">
+                <select class="form-control"  id="exampleFormControlSelect2" 
+                    (change)="setSection($event)" name="category"   required > 
+                    <option value="-" class="place">- Categoria -</option>
+                    <option value="inicio" >
+                        Inicio
+                    </option>
+                    <option value="tiendas" >
+                        Tiendas 
+                        </option>
+                </select>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Imagen en formato png o jpg (Tamaño recomendado 1900pixeles X 1200pixeles)</label>
+                    <!-- accept="image/png, image/PNG,image/svg"  -->
+                    <input type="file"  
+                      id="avatar" name="image" (change)="selectFile($event)"
+                        #path_image='ngModel'[(ngModel)]="banner.path_image" required>
+                      <!-- -->
+                </div>
+                <div class="caja-boton">
+                    <button [disabled]="(createForm.invalid)||sectionBandera==0" type="submit" class="btn btn-success" >Crear Imagen Banner</button>
+                </div>
+            </div>
+        </form>
+        
+        
+
+        
+
+     
+    </div>
+
+    <hr>
+    <h3>Imagenes Bannner sección Tiendas Akia</h3>
+    <div class="gal-inicio">
+        <div *ngFor="let item of imagesBannerTiendas">
+            <a (click)="desactiveImage(item.id)">
+                <img [src]="rutaImagesBanners+item.path_image" alt="">
+            </a>
+        </div>
+    </div>
+    <br><br>
+    <hr>
+    <h3>Imagenes Bannner sección Inicio Akia</h3>
+    <div class="gal-tiendas">
+        <div  *ngFor="let item of imagesBannerInicio">
+            <a (click)="desactiveImage(item.id)">
+                <img [src]="rutaImagesBanners+item.path_image" alt="">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="requisitos">
+        
+        <br><br><br><br>
+        <hr>
+        <h3>Cambiar Documento de descarga de requisitos para rentar espacios o locales.
+        </h3>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Documento con los requisitos tamaño máximo 5mb</label>
+            <!-- accept="image/png, image/PNG,image/svg"  -->
+            <input type="file"  
+              id="avatar" name="required" (change)="selectRequired($event)"
+               #required='ngModel'required [(ngModel)]="requisito">
+                <button [disabled]="(required.invalid)" (click)="createRequired()" class="btn btn-success">Subir Documento Requisitos</button>
+        </div>
+    </div>
+</div>

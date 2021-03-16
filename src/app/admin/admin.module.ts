@@ -19,6 +19,7 @@ import { TableShopsComponent } from './components/shops/table-shops/table-shops.
 import { CreateShopComponent } from './components/shops/create-shop/create-shop.component';
 import { UpdateShopComponent } from './components/shops/update-shop/update-shop.component';
 import { RentsComponent } from './components/rents/rents.component';
+import { ConfigComponent } from './components/config/config.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RentsComponent } from './components/rents/rents.component';
     TableShopsComponent,
     CreateShopComponent,
     UpdateShopComponent,
-    RentsComponent
+    RentsComponent,
+    ConfigComponent
   ],
   imports: [
     CommonModule,

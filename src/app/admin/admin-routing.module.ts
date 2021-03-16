@@ -7,6 +7,7 @@ import {TableNewsComponent} from  './components/news/table-news/table-news.compo
 import {TableShopsComponent} from  './components/shops/table-shops/table-shops.component';
 import {TableProductsComponent} from  './components/products/table-products/table-products.component';
 import {RentsComponent} from  './components/rents/rents.component';
+import {ConfigComponent} from  './components/config/config.component';
 
 const routes: Routes = [
  
@@ -20,7 +21,8 @@ const routes: Routes = [
       { path:'shops',component: TableShopsComponent},
       { path:'products',component: TableProductsComponent},
       { path:'rents',component: RentsComponent},
-      { path: '**',   redirectTo: 'login'}
+      { path:'config',component: ConfigComponent},
+      { path: '**',   redirectTo: 'dashboard'}
     ]
     
   },

@@ -34,7 +34,7 @@ export class TiendasComponent implements OnInit {
   public topCategorias:string="50%";
   public rutaImagesShops:string='http://localhost:8000/shops/';
 
-
+  public tiendasInputCarrousel:string="tiendas";
   constructor(private pageScrollService: PageScrollService,
                      @Inject(DOCUMENT) private document: any, 
                       private categoryService:CategoryService,
