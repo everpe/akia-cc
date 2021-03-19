@@ -3,6 +3,7 @@ import {Shop} from '../../admin/models/shop';
 import {Product} from '../../admin/models/product';
 import {ShopService} from '../../admin/services/shop.service';
 import { MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {environment} from '../../../environments/environment.prod';
 @Component({
   selector: 'app-show-shop',
   templateUrl: './show-shop.component.html',
@@ -10,11 +11,13 @@ import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class ShowShopComponent implements OnInit {
 
-  public rutaImagesProducts:string='http://localhost:8000/products/';
+  // public rutaImagesProducts:string='http://localhost:8000/products/';
+  public rutaImagesProducts:string='';
   public shop:Shop={} as Shop;
   products:Product[];
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
     private shop_service:ShopService) {
+      this.rutaImagesProducts=environment.rutaImagesProducts;
       this.setShop(this.data.id_shop);
       
   }

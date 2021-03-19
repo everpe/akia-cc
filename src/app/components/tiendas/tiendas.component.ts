@@ -8,6 +8,7 @@ import {Category} from '../../admin/models/category';
 import {Shop} from '../../admin/models/shop';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ShowShopComponent} from '../show-shop/show-shop.component';
+import {environment} from '../../../environments/environment.prod';
 @Component({
   selector: 'app-tiendas',
   templateUrl: './tiendas.component.html',
@@ -32,14 +33,15 @@ export class TiendasComponent implements OnInit {
   // Propiedades del Menu lateral categorias
   public positionCategoriasMenu:string="fixed";
   public topCategorias:string="50%";
-  public rutaImagesShops:string='http://localhost:8000/shops/';
-
+  // public rutaImagesShops:string='http://localhost:8000/shops/';
+  public rutaImagesShops:string='';
   public tiendasInputCarrousel:string="tiendas";
   constructor(private pageScrollService: PageScrollService,
                      @Inject(DOCUMENT) private document: any, 
                       private categoryService:CategoryService,
                       private shopService:ShopService,
                       private dialog: MatDialog) {
+    this.rutaImagesShops=environment.rutaImagesShops;                    
     this.setShops();    
     this.setCategories();           
   }

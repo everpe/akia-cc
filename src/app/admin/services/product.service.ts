@@ -2,12 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest,HttpHeaders,HttpResponse,HttpParams   } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Product} from '../models/product';
+import {environment} from '../../../environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  apiURL='http://localhost:8000/api/products';
-  constructor(private httpClient: HttpClient) { }
+  // apiURL='http://localhost:8000/api/products';
+  apiURL='';
+  constructor(private httpClient: HttpClient) { 
+    this.apiURL=environment.apiURL+'products';
+  }
 
   getCredentials():HttpHeaders{
     let token=localStorage.getItem('token-akia');

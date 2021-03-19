@@ -6,7 +6,7 @@
   </ol>
   <div  class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" [src]="rutaImagesBanners+bannerRepetido.path_image" alt="First slide">
+        <img class="d-block w-100" style="max-height: 450px;"  [src]="rutaImagesBanners+bannerRepetido.path_image" alt="First slide">
         <div class="todo">
           <h1 class="uno">{{title}}</h1>
           <a class="btn bnt-ver" [routerLink]="['/stores']">Ver Tiendas</a>
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div *ngFor="let item of banners" class="carousel-item">
-        <img class="d-block w-100" [src]="rutaImagesBanners+item.path_image" alt="First slide">
+        <img class="d-block w-100" style="max-height: 450px;" [src]="rutaImagesBanners+item.path_image" alt="First slide">
         <div class="todo">
           <h1 class="uno">Un Centro Comercial del que no querrás Salir</h1>
           <button class="btn bnt-ver">Ver tiendas</button>

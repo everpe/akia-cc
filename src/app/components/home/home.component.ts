@@ -3,7 +3,7 @@ import {NewService} from '../../admin/services/new.service';
 import {New} from '../../admin/models/new';
 import {Shop} from '../../admin/models/shop';
 import {ShopService} from '../../admin/services/shop.service';
-
+import {environment} from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-home',
@@ -12,10 +12,11 @@ import {ShopService} from '../../admin/services/shop.service';
 })
 export class HomeComponent implements OnInit {
   // ruta directorio de imagenes en backend
-  public rutaImagesNews:string='http://localhost:8000/news/';
+  // public rutaImagesNews:string='http://localhost:8000/news/';
+  public rutaImagesNews:string='';
   //Ruta directorio imagenes de tiendas
-  public rutaImagesShops:string='http://localhost:8000/shops/';
-
+  // public rutaImagesShops:string='http://localhost:8000/shops/';
+  public rutaImagesShops:string='';
   shops:Shop[]=[];
   news:New[]=[];
 
@@ -23,6 +24,8 @@ export class HomeComponent implements OnInit {
   public inicio:string="inicio";
   constructor(private newService:NewService,
               private shopService:ShopService) {
+    this.rutaImagesNews=environment.rutaImagesNews;
+    this.rutaImagesShops=environment.rutaImagesShops;
     this.setAllNews();
     this.setShops();
    }

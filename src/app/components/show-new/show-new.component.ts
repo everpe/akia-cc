@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NewService} from '../../admin/services/new.service';
 import{New} from '../../admin/models/new';
 import { ActivatedRoute } from '@angular/router';
+import {environment} from '../../../environments/environment.prod';
 @Component({
   selector: 'app-show-new',
   templateUrl: './show-new.component.html',
@@ -10,9 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 export class ShowNewComponent implements OnInit {
   public new:New={} as New;
 // Directorio imagenes noticias
-  public rutaImagesNews:string='http://localhost:8000/news/';
+  public rutaImagesNews:string='';
   constructor(private newService:NewService,
               private route: ActivatedRoute) { 
+    this.rutaImagesNews=environment.rutaImagesNews;            
     this.setParameterRouterLink();
 
   }

@@ -5,14 +5,17 @@ import {Category} from '../models/category';
 import {Shop} from '../models/shop';
 import {New} from '../models/new';
 import { map } from 'rxjs/operators';
+import {environment} from '../../../environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  
-  apiURL='http://localhost:8000/api/categories/';
-  constructor(private httpClient: HttpClient) { }
-
+  apiURL='';
+  // apiURL='http://localhost:8000/api/categories/';
+  constructor(private httpClient: HttpClient) {
+    this.apiURL=environment.apiURL+'categories';
+  }
+    
   /**
    * Todas las categorias.
    * @returns 
@@ -32,7 +35,7 @@ export class CategoryService {
  * @returns 
  */
   public showShopsByCategory(id_category:string): Observable<Shop[]>{
-    return this.httpClient.get<Shop[]>(this.apiURL + id_category).pipe(
+    return this.httpClient.get<Shop[]>(this.apiURL + `/`+ id_category).pipe(
       map((shops: Shop[])=>{
         // console.log(shops);
         return shops;
@@ -46,7 +49,7 @@ export class CategoryService {
  * @returns 
  */
    public showNewsByCategory(id_category:string): Observable<New[]>{
-    return this.httpClient.get<New[]>(this.apiURL + id_category).pipe(
+    return this.httpClient.get<New[]>(this.apiURL+ `/` + id_category).pipe(
       map((news: New[])=>{
         // console.log(news);
         return news;
@@ -70,12 +73,12 @@ export class CategoryService {
    */
   update(id,name){
     const headers = this.getCredentials();
-    return this.httpClient.put<Category>(this.apiURL + `${id}`,{name:name},{ 'headers': headers }); 
+    return this.httpClient.put<Category>(this.apiURL + `/`+ `${id}`,{name:name},{ 'headers': headers }); 
   }
 
   delete(id,name){
     const headers = this.getCredentials();
-    return this.httpClient.delete<Category>(this.apiURL + `${id}`,{ 'headers': headers }); 
+    return this.httpClient.delete<Category>(this.apiURL + `/`+ `${id}`,{ 'headers': headers }); 
   }
 
 

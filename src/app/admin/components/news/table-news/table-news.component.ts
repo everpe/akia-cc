@@ -6,7 +6,7 @@ import {New} from '../../../models/new';
 import {NewService} from '../../../services/new.service';
 import {CreateNewComponent} from '../create-new/create-new.component';
 // import {UpdateNewComponent} from '../update-new/update-new.component';
-
+import {environment} from '../../../../../environments/environment.prod';
 @Component({
   selector: 'app-table-news',
   templateUrl: './table-news.component.html',
@@ -20,11 +20,13 @@ export class TableNewsComponent implements OnInit {
   //Información  de La Tabla
   dataSource = new MatTableDataSource();
   // dataSource:Category[];
-  public rutaImagesNews:string='http://localhost:8000/news/';
-
+  // public rutaImagesNews:string='http://localhost:8000/news/';
+  public rutaImagesNews:string='';
   constructor(private newService:NewService,
               private dialog: MatDialog) { 
+    this.rutaImagesNews=environment.rutaImagesNews;
     this.getAllNews();
+    
   }
 
   ngOnInit(): void {

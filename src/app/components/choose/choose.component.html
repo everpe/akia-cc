@@ -3,7 +3,11 @@
     <p>Escoge la forma que mejor se adapte a ti
     y renta uno de  nuestros locales de la forma más rápida</p>
     <div class="botones">
-        <button class="btn btn-verde">Descargar requisitos</button>
+        <button class="btn btn-verde"  mat-button mat-dialog-close>
+            <a [href]="rutaDocumentoRequisitos+required.path_requisitos">
+                Descargar requisitos
+            </a>
+        </button>
         <button class="btn btn-verde" (click)="enviarPorCorreo()">Enviar formulario por correo</button>
         <!-- <button class="btn btn-verde"><a [routerLink]="['/rentar']">Rellenar formulario ya</a></button> -->
         <button class="btn btn-verde"  mat-button mat-dialog-close><a [routerLink]="['/rentar']" [queryParams]="{tipoRenta: tipoRenta}">Rellenar formulario ya</a></button>

@@ -6,6 +6,7 @@ import {Banner} from '../../models/banner';
 import {CategoryService} from '../../../admin/services/category.service';
 import {Category} from '../../../admin/models/category';
 import {NgForm} from '@angular/forms';
+import {environment} from '../../../../environments/environment.prod';
 @Component({
   selector: 'app-config',
   templateUrl: './config.component.html',
@@ -14,8 +15,8 @@ import {NgForm} from '@angular/forms';
 export class ConfigComponent implements OnInit {
   imagesBannerTiendas:Banner[]=[];
   imagesBannerInicio:Banner[]=[];
-  public rutaImagesBanners:string='http://localhost:8000/banners/';
-
+  // public rutaImagesBanners:string='http://localhost:8000/banners/';
+  public rutaImagesBanners:string='';
   //Nuevo Banner
   categories:Category[]=[];
   file:File;
@@ -25,8 +26,10 @@ export class ConfigComponent implements OnInit {
   //Requisitos para descargar al rentar
   requisito:File;
   constructor(private configService:ConfigService) { 
+    this.rutaImagesBanners=environment.rutaImagesBanners;
     this.setImagesTiendas();
     this.setImagesInicio();
+    
   }
 
   setImagesTiendas(){

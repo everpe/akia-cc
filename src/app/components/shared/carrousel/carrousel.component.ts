@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import{Banner} from '../../../admin/models/banner';
 import {ConfigService} from '../../../admin/services/config.service';
+import {environment} from '../../../../environments/environment.prod';
 @Component({
   selector: 'app-carrousel',
   templateUrl: './carrousel.component.html',
@@ -17,17 +18,16 @@ export class CarrouselComponent implements OnInit {
   @Input() public section: string ="";
   @Input() public title: string ="";
   //Directorio del servidor donde estan las imagenes de tipo Banner
-  public rutaImagesBanners:string='http://localhost:8000/banners/';
+  public rutaImagesBanners:string='';
   banners:Banner[]=[]
-  bannerRepetido:Banner;
+  bannerRepetido:Banner= {} as Banner;
+
   constructor(config: NgbCarouselConfig,
               private configService:ConfigService) {
-    // 
+    this.rutaImagesBanners=environment.rutaImagesBanners;
     config.interval = 2000;
     config.keyboard = true;
-    config.pauseOnHover = true;
-    
-    
+    config.pauseOnHover = true; 
   }
 
   ngOnInit(): void {

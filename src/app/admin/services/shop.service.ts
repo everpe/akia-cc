@@ -4,14 +4,17 @@ import { Observable } from 'rxjs';
 import {Shop} from '../models/shop';
 import {Product} from '../models/product';
 import { map } from 'rxjs/operators';
+import {environment} from '../../../environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
   
-  apiURL='http://localhost:8000/api/shops';
-
-  constructor(private httpClient: HttpClient) { }
+  // apiURL='http://localhost:8000/api/shops';
+  apiURL='';
+  constructor(private httpClient: HttpClient) {
+    this.apiURL=environment.apiURL+'shops';
+  }
 
   /**
    * Consulta todas las tiendas de Akia

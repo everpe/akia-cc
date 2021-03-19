@@ -1,10 +1,11 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import {Sort, MatSort} from '@angular/material/sort';
+// import {Sort, MatSort} from '@angular/material/sort';
 import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
 import {Shop} from '../../../models/shop';
 import {ShopService} from '../../../services/shop.service';
 import {CreateShopComponent} from '../create-shop/create-shop.component';
+import {environment} from '../../../../../environments/environment.prod';
 @Component({
   selector: 'app-table-shops',
   templateUrl: './table-shops.component.html',
@@ -17,12 +18,14 @@ export class TableShopsComponent implements OnInit {
   //Información  de La Tabla
   dataSource = new MatTableDataSource();
   // dataSource:Category[];
-  public rutaImagesShops:string='http://localhost:8000/shops/';
+  // public rutaImagesShops:string='http://localhost:8000/shops/';
+  public rutaImagesShops:string='';
 
-  @ViewChild(MatSort) sort: MatSort;
   constructor(private shopService:ShopService,
             private dialog: MatDialog) { 
+    this.rutaImagesShops=environment.rutaImagesShops;
     this.getAllShops();
+    
   }
 
   ngOnInit(): void {

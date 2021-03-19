@@ -3,12 +3,16 @@ import { HttpClient,HttpEvent, HttpRequest,HttpHeaders,HttpResponse,HttpParams  
 import { Observable } from 'rxjs';
 import{Rent} from '../models/rent';
 import { map } from 'rxjs/operators';
+import {environment} from '../../../environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
 export class RentService {
-  apiURL='http://localhost:8000/api/rents';
-  constructor(private httpClient:HttpClient) { }
+  // apiURL='http://localhost:8000/api/rents';
+  apiURL='';
+  constructor(private httpClient:HttpClient) {
+    this.apiURL=environment.apiURL+'rents';
+   }
 
 
 
@@ -36,7 +40,7 @@ export class RentService {
     let headers=new HttpHeaders().set('Content-Type','application/json');
     // 'Access-Control-Allow-Headers': 'Content-Type',
     let json = JSON.stringify(rent);//en este aspecto es mejor spring q laravel jeje
-    console.log(json);
+    // console.log(json);
     return this.httpClient.post<any>(this.apiURL,json,{headers:headers});
   }
 

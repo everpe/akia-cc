@@ -3,14 +3,16 @@ import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {Banner} from '../models/banner';
+import {Required} from '../models/required';
+import {environment} from '../../../environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
-  apiURL='http://localhost:8000/api';
-
+  // apiURL='http://localhost:8000/api';
+  apiURL='';
   constructor(private httpClient: HttpClient) { 
-
+    this.apiURL=environment.apiURL;
   }
 
 
@@ -21,7 +23,7 @@ export class ConfigService {
     let headers=new HttpHeaders().set('Accept','application/json');
     const data: FormData = new FormData();
       data.append('path_requisitos', file);
-    return this.httpClient.post<any>(this.apiURL+`/requireds/create/`,data,{headers:headers});
+    return this.httpClient.post<any>(this.apiURL+`requireds/create/`,data,{headers:headers});
   
   }
 /**
@@ -38,7 +40,7 @@ export class ConfigService {
     const data: FormData = new FormData();
       data.append('path_image', file);
       data.append('section', banner.section);
-    return this.httpClient.post<any>(this.apiURL+`/banners/create/`,data,{headers:headers});
+    return this.httpClient.post<any>(this.apiURL+`banners/create/`,data,{headers:headers});
   }
   /**
    * Todas las imagenes del banner por tipo
@@ -47,7 +49,7 @@ export class ConfigService {
    */
   public listAllTiendas(tipo): Observable<Banner[]> {
     // + `find/tipos/documentos`
-    return this.httpClient.get<any[]>(this.apiURL +`/banners/index/`+ `${tipo}`).pipe(
+    return this.httpClient.get<any[]>(this.apiURL +`banners/index/`+ `${tipo}`).pipe(
       map((banners: Banner[])=>{
         return banners;
       })
@@ -62,6 +64,14 @@ export class ConfigService {
    */
   public desactiveBanner(id): Observable<Banner[]> {
     // + `find/tipos/documentos`
-    return this.httpClient.get<any[]>(this.apiURL +`/banners/desactive/`+ `${id}`);
+    return this.httpClient.get<any[]>(this.apiURL +`banners/desactive/`+ `${id}`);
+  }
+
+
+  /**
+   * Obtiene el path del servidor donde se ubica el documento de Requisitos
+   */
+  public getRequired():Observable<Required>{
+    return this.httpClient.get<Required>(this.apiURL +`/requireds`);
   }
 }

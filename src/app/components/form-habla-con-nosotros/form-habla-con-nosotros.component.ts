@@ -79,5 +79,8 @@ export class FormHablaConNosotrosComponent implements OnInit {
       width: 'auto',
       data:{form:hablaForm,tipoRenta:this.tipoRenta }
     });
+    dialogRef.afterClosed().subscribe(
+      result => {window.location.reload();}
+    );
   }
 }

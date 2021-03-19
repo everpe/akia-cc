@@ -12,13 +12,6 @@ export class FloatingSideMenuComponent implements OnInit {
   
   public title:string;
   public letersTitle:string[]=[""];
-  // public categorias: string[] = ["Categoria1","Categoria2",
-  //                        "Categoria3","Categoria4",
-  //                        "Categoria5","Categoria6",
-  //                        "Categoria3","Categoria4",
-  //                        "Categoria5","Categoria6","Categoria3","Categoria4",
-  //                        "Categoria5","Categoria6"];
-
   @Input() public categories: string[] =[];
  
   // Propiedad Css que se le cambia desde componentes que llamen este menu

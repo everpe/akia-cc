@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   api_key_google_maps:'AIzaSyAC7D5FiKltj1jTo_0-XAH5SykTZMUqE3g'
 };
 

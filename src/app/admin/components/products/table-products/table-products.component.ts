@@ -7,6 +7,7 @@ import {Shop} from '../../../models/shop'
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
 import {CreateProductComponent} from '../create-product/create-product.component';
+import {environment} from '../../../../../environments/environment.prod';
 @Component({
   selector: 'app-table-products',
   templateUrl: './table-products.component.html',
@@ -18,8 +19,8 @@ export class TableProductsComponent implements OnInit {
   //Información  de La Tabla
   dataSource = new MatTableDataSource();
   // dataSource:Category[];
-  public rutaImagesProducts:string='http://localhost:8000/products/';
-
+  // public rutaImagesProducts:string='http://localhost:8000/products/';
+  public rutaImagesProducts:string='';
 
   public shop:Shop={} as Shop;
 
@@ -27,6 +28,7 @@ export class TableProductsComponent implements OnInit {
               private shopService:ShopService,
               private dialog: MatDialog,
               private productService:ProductService) { 
+    this.rutaImagesProducts=environment.rutaImagesProducts;            
     this.setParameterRouterLink();
   }
 

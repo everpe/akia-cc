@@ -4,6 +4,7 @@ import {Category} from '../../admin/models/category';
 import {New} from '../../admin/models/New';
 import {CategoryService} from '../../admin/services/category.service';
 import {NewService} from '../../admin/services/new.service';
+import {environment} from '../../../environments/environment.prod';
 @Component({
   selector: 'app-noticias',
   templateUrl: './noticias.component.html',
@@ -25,71 +26,11 @@ export class NoticiasComponent implements OnInit {
   // Categorias
   categories:Category[]; 
   news:New[]=[];
-  public rutaImagesNews:string='http://localhost:8000/news/';
-  //  news:any=[ 
-    
-  //    {
-  //      "img":"../../../assets/anoNuevo.png",
-  //      "title":"Celebra con nosotros el año nuevo chino",
-  //      "description":"Some quick example text to build on the card"+ 
-  //                     "title  the card title and make up the bulk of the card's content and make up the bulk of the card's content"+ 
-  //                     "the card title and make up the bulk of the card's content.",
-  //      "date":"28-02-2021"
-  //    },
-  //    {
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   },{
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   },{
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   },{
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   },{
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   },{
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   },{
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   },{
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   },{
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   },{
-  //     "img":"../../../assets/anoNuevo.png",
-  //     "title":"Celebra con nosotros el año nuevo chino",
-  //     "description":"Some quick example text to build on the card title and make up the bulk of the card's content the card title and make up the bulk of the card's content.",
-  //     "date":"28-02-2021"
-  //   }
-  // ]
+  // public rutaImagesNews:string='http://localhost:8000/news/';
+  public rutaImagesNews:string='';
   constructor(private categoryService:CategoryService,
               private newService:NewService) {
+    this.rutaImagesNews=environment.rutaImagesNews;
     this.setCategories(); 
     this.setAllNews();
    }
