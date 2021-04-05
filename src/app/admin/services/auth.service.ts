@@ -18,21 +18,46 @@ export class AuthService
     this.uri=environment.apiURL;
   }
 
+  /**
+   * Inicia sesión
+   * @param data 
+   * @returns 
+   */
   public login(data: UserLogin){
     return this.http.post(this.uri + `login`, data).subscribe((response: Login) => 
     {
-      localStorage.setItem('token-akia', response.access_token);
-      this.router.navigate(['/admin/dashboard']);
+      // console.log('login...'+response.access_token)
+      if(response.access_token!==undefined && 
+        response.access_token!==null){
+        localStorage.setItem('token-akia', response.access_token);
+        this.router.navigate(['/admin/dashboard']);
+      }else{
+        alert('Usuarioy/o contraseña Incorrectos');
+      }
+      
     },error=>{
       console.log(error);
     });
   }
   
+
+  /**
+   * Borra el token de LocalStorage
+   */
   logout()
   {
     localStorage.removeItem('token-akia');
     // localStorage.clear();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
+  }
+
+
+  /**
+   * Verifica si esta logueado, chequeandoi el token en localStorage
+   * @returns 
+   */
+  public  loggedIn():boolean{
+    return localStorage.getItem('token-akia') !==  null;
   }
 
 }

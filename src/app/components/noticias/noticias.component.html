@@ -3,8 +3,7 @@
     <div class="banner desktop">
         <img src="../../../assets/bannerNoticias.png" alt="">
     </div>
-     <!-- <app-carrousel></app-carrousel> -->
-
+  
     <div class="desktop categorias-side">
         <h4>Categorias</h4>
         <a (click)="setAllNews()">-Todas-</a>
@@ -32,18 +31,17 @@
                     <div class="card-body">
                         <h4>{{item.title}}</h4>  
                         <p class="card-text">  {{item.description | substring:0:110}}</p>
+                    
+                        <div class="inferior-card">
+                            <span>{{item.created_at| date}}</span>
+                            <a [routerLink]="['/show/new']" [queryParams]="{id_new: item.id}">Seguir Leyendo</a>
+                        </div>
                     </div>
-                    <div class="inferior-card">
-                        <span>{{item.created_at| date}}</span>
-                        <a [routerLink]="['/show/new']" [queryParams]="{id_new: item.id}">Seguir Leyendo</a>
-                    </div>
+            
                 </div>
             </div>
     </div>    
-    <!-- <div class="card text-center m-3"> -->
-     
-<!-- <div class="card-footer pb-0 pt-3"> -->
-    <!-- vincular este items con la lista de tiendas -->
+
     <div class="paginador">
         <mat-paginator 
                 [length]="news.length"
@@ -52,7 +50,7 @@
                 (page)="handlePage($event)">
         </mat-paginator>
     </div>
-<!-- </div> -->
+
 
     <div class="mobile">
         <app-floating-menu 
@@ -61,7 +59,6 @@
         [categories]="categories"
         (propagar2)="recibirNewsMenuMobile($event)">
         </app-floating-menu>
-        <!--     -->
     </div>
 
 

@@ -77,8 +77,8 @@ app-carrousel{
     background-color: var(--gris-claro);
     /* background-color: red; */
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding:6% 1%;
+    grid-template-columns: 1fr 2px 1fr;
+    padding:4% 2%;
     justify-content: center;
     align-items: center;
   }
@@ -89,12 +89,19 @@ app-carrousel{
     height: 100%;
     transition: .5s ease;
     backface-visibility: hidden;
+    padding: 2%;
     /* display: grid;
     grid-template-rows: minmax(auto,200px); */
   }
   .div-imagen h5{
-    border-left:2px solid ;
-    padding-left: 5%;
+    /* border-left:2px solid ;
+    padding-left: 5%; */
+    text-align: center;
+    padding: 1%;
+  }
+  .vl {
+    border-left: 2px solid ;
+    min-height: 100px;
   }
   .middle {
     transition: .5s ease;

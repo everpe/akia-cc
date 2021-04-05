@@ -1,41 +1,51 @@
 <header class="header">
     <nav>
         <input id="nav-toggle" type="checkbox">
-        <div class="logo">
-            <a [routerLink]="['/home']" >
+        <div class="box-head">
+            <a [routerLink]="['/home']" class="desktop">
                 <img  src="../../../../assets/logoAkiaLetras.svg" alt="logo Akia">
             </a>
-            
+            <a [routerLink]="['/home']" class="logo2 mobile">
+                <img  src="../../../../assets/mobil/logoPaseoAkia.svg" alt="logo Akia">
+            </a>
             <a class="txt-header desktop" (click)="openUbication()">Cómo llegar</a>
-
-            <div class="mobile1">
-                <img class="facebook" src="../../../../assets/facebookVerde.svg" alt="">
-                <img class="instagram" src="../../../../assets/InstagramVerde.svg" alt="">
+            <!-- Redes en mobile parte superior -->
+            <div class="redes2 mobile" >
+                <div >
+                    <img class="facebook" src="../../../../assets/facebookVerde.svg" alt="">
+                </div> 
+                <div>
+                    <img class="instagram" src="../../../../assets/InstagramVerde.svg" alt="">
+                </div>   
             </div>
         </div>
         <ul class="links">
-            <li><a [routerLink]="['/home']">Inicio</a></li>
-            <li><a [routerLink]="['/stores']">Tiendas</a></li>
-            <li><a [routerLink]="['/terrace']">Terraza</a></li>
-            <!-- <li><a href="#projects">Restaurante</a></li> -->
-            <!-- <li><a href="#contact">Entretenimiento</a></li> -->
-            <li><a [routerLink]="['/news']"> Noticias</a></li>
-            <li><a [routerLink]="['/contact']">Contacto</a></li>
-            <li><a [routerLink]="['/family-akia']">Familia Akia</a></li>
-            <li><a [routerLink]="['/knows']">Conócenos</a></li>
-
+            <li><a [routerLink]="['/home']" routerLinkActive="active">Inicio</a></li>
+            <li><a [routerLink]="['/stores']" routerLinkActive="active">Tiendas</a></li>
+            <li><a [routerLink]="['/terrace']" routerLinkActive="active">Terraza</a></li>
+            <li><a [routerLink]="['/news']" routerLinkActive="active"> Noticias</a></li>
+            <li><a [routerLink]="['/contact']" routerLinkActive="active">Contacto</a></li>
+            <li><a [routerLink]="['/family-akia']" routerLinkActive="active">Familia Akia</a></li>
+            <li><a [routerLink]="['/knows']" routerLinkActive="active">Conócenos</a></li>
+            <li *ngIf="loggedIn()"><a [routerLink]="['/admin/dashboard']" routerLinkActive="active">Admin</a></li>
             <!-- DESKTOP -->
-            <div class="redes">
+            <div class="redes desktop">
                 <img class="facebook" src="../../../../assets/facebookVerde.svg" alt="">
                 <img class="instagram" src="../../../../assets/InstagramVerde.svg" alt="">
             </div>
-            <div class="mobile">
+
+            <div class="inferior mobile">
+                <!-- Contenido PRTE INFERIOR EN RESSPONSIVE -->
                 <hr class="hr">
-                <br>
-                <img class="img-log-kia"  src="../../../../assets/cuboAkiaVerdeFondoBlanco.svg" alt="logo Akia">
-                <button class="btn boton-mobile">Cómo llegar</button>
-                <img class="facebook" src="../../../../assets/facebookVerde.svg" alt="">
-                <img class="instagram" src="../../../../assets/InstagramVerde.svg" alt="">
+                <!-- <img class="img-log-kia"  src="../../../../assets/cuboAkiaVerdeFondoBlanco.svg" alt="logo Akia"> -->
+                <div class="infe-content" style="display:flex;justify-content: space-between;">
+                    <button class="btn boton-mobile" (click)="openUbication()">Cómo llegar</button>
+                    <div>
+                        <img class="facebook" src="../../../../assets/facebookVerde.svg" alt="">
+                        <img class="instagram" src="../../../../assets/InstagramVerde.svg" alt="">  
+                    </div>
+                </div>
+                
             </div>
         </ul>
         

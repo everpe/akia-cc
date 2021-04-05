@@ -102,12 +102,14 @@ app-carrousel{
     /* background-color: yellow; */
     min-height:210px ;
     padding-top:12%;
-    padding-left: 3%;
+    padding-left: 1%;
 }
 .img-familia{
     position: absolute;
-    right: 0px;
-    top: 20%;
+    right: 0%;
+    top: 30%;
+    max-width: 150px;
+    /* height: 100%; */
 }
 
 
@@ -127,15 +129,15 @@ app-carrousel{
     grid-auto-rows: minmax(100px, 200px);       
     /* grid-template-rows: repeat(auto-fill,5%); */
   }
-  /* .galeria-tiendas img{
-      max-width: 100%;
-  } */
+
   .div-imagen{
       /* border:solid red; */
-      padding:6% 1%;
+      padding:8%;
+      display: flex;
+      justify-content: space-around;
   }
   .div-imagen img{
-    max-width: 150px;
+    max-width: 120px;
     /* height: 100%; */
   }
   
@@ -146,8 +148,7 @@ app-carrousel{
       background-color: var(--gris-claro);
       /* background-color: red; */
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      /* padding:6% 1%; */
+      grid-template-columns: 1fr 10px 1fr;
       justify-content: center;
       align-items: center;
     }
@@ -161,9 +162,14 @@ app-carrousel{
       /* border: solid green; */
     }
     .div-imagen h5{
-      border-left:2px solid ;
-      padding-left: 5%;
+      /* padding-left: 5%; */
+      /* border: solid green; */
+      text-align: right;
     }
+    .vl {
+        border-left: 2px solid ;
+        min-height: 100px;
+      }
     .middle {
       transition: .5s ease;
       opacity: 0;
@@ -173,6 +179,8 @@ app-carrousel{
       transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       text-align: center;
+      width: 0px;
+      /* border: solid red; */
     }
     .div-imagen:hover .image {
       opacity: 0.5;
@@ -315,26 +323,35 @@ app-carrousel{
         border:solid 1px #84BD00;
     }
     .familia{
-        padding-left: 1em;
+        padding-left: 0em;
+        /* border: solid red; */
     }
     .conocenos{
-        padding: 0;
-        padding-left:5px;
+        padding: 0px;
+        /* background-color: yellow; */
         /* Padding del tamaño de la img familia*/
         /* padding-right: 180px; */
     }
+    .img-familia{
+        max-width: 120px;
+    }
     .conocenos p{
         text-align: left;
-        max-width: 40%;
-        padding-top: 3%;
+        max-width: 60%;
+        padding: 10%;
     }
     .conocenos h4{
         font-size: 1em;
+        padding-left: 8%;
     }
     .span-conocenos{
         justify-content: left;  
     }
+    .borde p{
+        padding: 5%;
+    }
     .text2{
+        
         grid-area: text2-hr;
     }               
     .text2-hr{
@@ -364,6 +381,9 @@ app-carrousel{
     .div-imagen{
         /* border:solid blue; */
         padding:1%;
+    }
+    .div-imagen h5{
+        text-align: left;
     }
     .galeria-tiendas img{
         /* width: 100%;

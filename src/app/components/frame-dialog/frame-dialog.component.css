@@ -24,17 +24,25 @@ button{
 }
 .boton{
     position:absolute;
-    top: 0px;
-    right: 2px;
+    top: 30px;
+    right: 23px;
     font-size: 25px;
     color: var(--gris-oscuro);
+    border:0;background-color: transparent;
+    display: inline;
 }
 .dialog button{
     
 }
 
+
+
 @media screen and (max-width: 768px) {
     .container-frame h2{
         padding-top: 5%;
+    }
+    .boton{
+        top: 10px;
+        right: 15px;
     }
 }

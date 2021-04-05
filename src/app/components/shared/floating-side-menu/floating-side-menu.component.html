@@ -7,7 +7,7 @@
 </label>
 <div class="left-panel">
     <ul>
-        
+        <a (click)="setAllEntitiesCategory()"><li>-Todas-</li></a>
         <a *ngFor="let cat of categories" (click)="setEntitiesCategory(cat.id)" >
             <li >
                 {{cat.name}}

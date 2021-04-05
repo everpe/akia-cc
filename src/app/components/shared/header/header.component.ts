@@ -8,6 +8,8 @@ import {FrameDialogComponent} from '../../frame-dialog/frame-dialog.component';
 })
 export class HeaderComponent implements OnInit {
 
+  //bandera para saber si está logueado el admin
+  logueado:any=false;
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -28,6 +30,12 @@ export class HeaderComponent implements OnInit {
     // );
     dialogRef.disableClose = true;
 
+  }
+
+
+  public  loggedIn():boolean{
+    console.log(this.logueado);
+    return this.logueado=localStorage.getItem('token-akia') !==  null;
   }
 
 }

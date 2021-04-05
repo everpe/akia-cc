@@ -7,32 +7,32 @@
     
     <div class="datos">
         <div class="ubicacion">
-            <span>Ubicación:
+            <span>Ubicación: <br>
                 <label class="fondo" for="">{{shop.location}}</label>
             </span>
         </div>
         <div class="horarios">
-            <span>Horarios:
+            <span>Horarios: <br>
                 <label class="fondo"for="">{{shop.attention_schedule}}</label>
             </span>    
         </div>
         <div class="categoria">
-            <span>Categoria:
+            <span>Categoria: <br>
                 <label class="fondo"for="">{{shop.category_id}}</label>
             </span>
         </div>
         <!-- <div class="telefonos"> -->
             <span *ngIf="shop.cellphone_one!=null && shop.cellphone_one!=undefined">
-                Telefono 1:
+                Telefono 1: <br>
                 <label class="fondo" for="">{{shop.cellphone_one}}</label>
             </span>
             
             <span *ngIf="shop.cellphone_two!=null && shop.cellphone_two!=undefined">
-                Telefono 2:
+                Telefono 2: <br>
                 <label class="fondo"for="">{{shop.cellphone_two}}</label>
             </span>
             <span *ngIf="shop.web_site!=null">
-                Sitio Web:
+                Sitio Web: <br>
                 <label class="fondo"for="">{{shop.web_site}}</label>
             </span>
         <!-- </div> -->

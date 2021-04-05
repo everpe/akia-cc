@@ -72,6 +72,6 @@ export class ConfigService {
    * Obtiene el path del servidor donde se ubica el documento de Requisitos
    */
   public getRequired():Observable<Required>{
-    return this.httpClient.get<Required>(this.apiURL +`/requireds`);
+    return this.httpClient.get<Required>(this.apiURL +`requireds`);
   }
 }

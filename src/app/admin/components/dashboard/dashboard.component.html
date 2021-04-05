@@ -26,11 +26,16 @@
                 <img src="../../../../assets/admin/settings.svg" alt="">
             </a>
         </div>
+        <div class="otras">Cerrar Sesión
+            <a (click)="logout()">
+                <img src="../../../../assets/admin/logout.svg" alt="">
+            </a>
+        </div>
     </div>
 
-    <div *ngIf="!logueado" >
+    <div *ngIf="loggedIn()==false"  >
         <h6>Debe iniciar Sesión como administrador</h6>
-        <a [routerLink]="['/admin/login']">Por Favor Inicie Secion Obtener permisos de Administrador</a>
+        <a [routerLink]="['/admin/login']">Por Favor Inicie Sesión,para Obtener permisos de Administrador</a>
     </div>
 
 </div>
